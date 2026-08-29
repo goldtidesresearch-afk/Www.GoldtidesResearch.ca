@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reference Guide — Goldtide Research</title>
+<link rel="icon" type="image/png" href="assets/goldtide-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0a0a0b; --surface:#141416; --surface-2:#19191b;
+    --line: rgba(201,162,39,0.22); --line-bright: rgba(201,162,39,0.45);
+    --gold:#c9a227; --gold-bright:#e8c468; --gold-dim:#7a6526;
+    --bone:#ede6d6; --muted:#948c7c; --muted-2:#5c574c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--void); color:var(--bone); font-family:'Inter',sans-serif; font-size:16px; line-height:1.65; }
+  ::selection{ background:var(--gold); color:#0a0a0b; }
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; max-width:100%; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 40px; }
+  .label{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:0.72rem; font-weight:500; color:var(--gold); }
+
+  header{ position:sticky; top:0; z-index:100; background:rgba(10,10,11,0.85); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ width:38px; height:38px; border-radius:50%; }
+  .brand-name{ font-family:'Cinzel',serif; font-size:0.94rem; font-weight:600; letter-spacing:0.09em; }
+  .brand-name em{ font-style:normal; color:var(--gold-bright); }
+  .back-link{ font-family:'Oswald',sans-serif; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:9px 16px; transition:all .2s ease; }
+  .back-link:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
+
+  main{ padding:80px 0 120px; }
+  .legal-wrap{ max-width:760px; margin:0 auto; padding:0 40px; }
+  .legal-eyebrow{ display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+  .legal-eyebrow .rule{ width:44px; height:1px; background:var(--gold); }
+  h1{ font-family:'Fraunces',serif; font-weight:500; font-size:clamp(2rem, 4vw, 2.8rem); line-height:1.1; margin-bottom:14px; }
+  .updated{ color:var(--muted-2); font-size:0.82rem; font-style:italic; margin-bottom:50px; }
+  h2{ font-family:'Fraunces',serif; font-weight:500; font-size:1.3rem; color:var(--gold-bright); margin:44px 0 14px; }
+  h2:first-of-type{ margin-top:0; }
+  h3{ font-family:'Fraunces',serif; font-weight:500; font-size:1.02rem; color:var(--bone); margin:24px 0 10px; }
+  p{ color:var(--muted); margin-bottom:14px; max-width:640px; }
+  ul, ol{ color:var(--muted); margin:0 0 14px 22px; max-width:620px; }
+  li{ margin-bottom:8px; }
+  strong{ color:var(--bone); font-weight:500; }
+  a.inline-link{ color:var(--gold-bright); border-bottom:1px solid var(--gold-dim); }
+  a.inline-link:hover{ border-color:var(--gold-bright); }
+  .legal-note{ margin-top:60px; padding:22px 24px; border:1px solid var(--line); background:var(--surface); font-size:0.86rem; color:var(--muted); }
+  .legal-note strong{ display:block; color:var(--gold-bright); font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
+  .toc{ display:flex; flex-wrap:wrap; gap:8px; margin:26px 0 50px; padding:0; list-style:none; }
+  .toc a{
+    font-family:'Oswald', sans-serif;
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--muted);
+    border:1px solid var(--line);
+    padding:8px 13px;
+    transition:all .2s ease;
+  }
+  .toc a:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
+  .glossary-item{ border-top:1px solid var(--line); padding:16px 0; }
+  .glossary-item:last-child{ border-bottom:1px solid var(--line); }
+  .glossary-item .g-name{ font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-bright); display:block; margin-bottom:6px; }
+  .glossary-item p{ margin:0; font-size:0.9rem; }
+  .section-anchor{ scroll-margin-top:100px; }
+
+  footer{ border-top:1px solid var(--line); padding:50px 0 30px; }
+  .foot-simple{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px; }
+  .foot-simple p{ color:var(--muted-2); font-size:0.82rem; margin:0; }
+  .foot-links{ display:flex; flex-wrap:wrap; gap:22px; }
+  .foot-links a{ font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); transition:color .2s ease; }
+  .foot-links a:hover{ color:var(--gold-bright); }
+
+  @media (max-width:640px){
+    .legal-wrap{ padding:0 24px; }
+    .wrap{ padding:0 24px; }
+    main{ padding:50px 0 80px; }
+  }
+  .guide-figure{
+    margin:32px 0;
+    text-align:center;
+  }
+  .guide-figure img{
+    max-width:100%;
+    height:auto;
+    border:1px solid var(--line-bright);
+  }
+  .guide-figure figcaption{
+    font-family:'Inter', sans-serif;
+    font-size:0.82rem;
+    color:var(--muted);
+    margin-top:10px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
+      <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
+    </a>
+    <a href="index.html" class="back-link">← Back to Shop</a>
+  </div>
+</header>
+
+<main>
+  <div class="legal-wrap">
+    <div class="legal-eyebrow"><span class="rule"></span><span class="label">New To Research Peptides?</span></div>
+    <h1>The Goldtide Reference Guide</h1>
+    <p class="updated">The essentials on reading a COA, handling and storing lyophilized compounds, and what each of our nine research categories actually covers.</p>
+
+    <ul class="toc">
+      <li><a href="#coa">Reading a COA</a></li>
+      <li><a href="#handling">Reconstitution &amp; Handling</a></li>
+      <li><a href="#storage">Storage &amp; Stability</a></li>
+      <li><a href="#glossary">Category Glossary</a></li>
+      <li><a href="#stacking">On Stacking</a></li>
+    </ul>
+
+    <h2 id="coa" class="section-anchor">Reading a Certificate of Analysis</h2>
+    <p>A Certificate of Analysis (COA) is the lab report behind a given production batch. It's how a claim like "≥99% pure" gets verified rather than just stated. Most COAs you'll come across are built around a handful of core sections:</p>
+    <ul>
+      <li><strong>Identity confirmation</strong> — usually mass spectrometry, confirming the molecule's actual mass matches what's expected for that compound. This is what tells you the vial contains the right peptide, not a look-alike or degraded fragment.</li>
+      <li><strong>Purity</strong> — typically from HPLC (high-performance liquid chromatography), which separates a sample into its components and reports the main compound as a percentage of the total peak area. A few smaller peaks alongside the main one are normal; they represent trace synthesis byproducts.</li>
+      <li><strong>Batch or lot number</strong> — ties the report to one specific production run. This is the number to cross-reference against the label on your vial — a COA is only meaningful if it matches the batch you actually received.</li>
+      <li><strong>Testing lab and date</strong> — ideally an independent third-party lab, not an in-house one, since that's what makes the result a check rather than a claim.</li>
+      <li><strong>Endotoxin or heavy-metal screening</strong> — included by some labs, not all. Where present, it's an added layer beyond identity and purity.</li>
+    </ul>
+    <p>When in doubt about a specific COA, the lot number is the fastest way to confirm you're looking at the right one — it should match your vial exactly, not just the compound name.</p>
+
+    <h2 id="handling" class="section-anchor">Reconstitution &amp; Handling</h2>
+    <p>Lyophilized (freeze-dried) peptides ship as a stable powder and need to be brought into solution before use. The mechanics of that process matter more than people expect:</p>
+    <ul>
+      <li><strong>Sterile technique throughout.</strong> Wipe the stopper with an alcohol swab before every needle insertion, on both the peptide vial and the diluent vial.</li>
+      <li><strong>Add diluent slowly, down the inside wall of the vial</strong> — not directly onto the powder. A fast stream can shear the peptide structure on contact.</li>
+      <li><strong>Swirl gently to dissolve — don't shake.</strong> Agitation from shaking can denature a peptide's folded structure, the same way whisking egg whites changes their protein structure irreversibly.</li>
+      <li><strong>Let it settle and inspect.</strong> A properly reconstituted solution is typically clear, with no visible particulate. Cloudiness can indicate a problem with that reconstitution.</li>
+      <li><strong>Refrigerate immediately once dissolved.</strong> A reconstituted peptide is far less stable than the lyophilized powder it came from.</li>
+    </ul>
+    <p>This page covers the general mechanics of reconstitution, not dosing or administration protocols — those are a matter for your own research design.</p>
+
+    <h2 id="storage" class="section-anchor">Storage &amp; Stability</h2>
+    <p>Peptide stability comes down to three enemies: heat, light, and time in solution.</p>
+    <ul>
+      <li><strong>Unopened, lyophilized:</strong> stable at room temperature for the short term, which is what allows standard shipping. For longer-term storage, a fridge (2–8°C) is better, and a freezer (well below 0°C) is best for extended periods.</li>
+      <li><strong>Reconstituted:</strong> keep refrigerated at all times, and use within the window noted for that specific compound — reconstituted peptides generally have a much shorter usable life than the dry powder.</li>
+      <li><strong>Avoid freeze-thaw cycling.</strong> Repeatedly freezing and thawing a reconstituted solution accelerates degradation. If you need multiple sessions from one vial, keep it refrigerated between uses rather than freezing and rethawing.</li>
+      <li><strong>Keep it dark.</strong> UV and even ordinary light exposure can degrade some peptides over time — the amber or foil packaging many vials ship in isn't just branding.</li>
+    </ul>
+
+    <figure class="guide-figure">
+      <img src="assets/guides/peptide-storage-guide.png" alt="Goldtide Research peptide storage reference: refrigerated, frozen, and deep-frozen stability windows for lyophilized peptides, plus handling notes.">
+      <figcaption>A quick reference for lyophilized peptide storage and stability. Always check the specific notes for your compound.</figcaption>
+    </figure>
+
+    <h2 id="glossary" class="section-anchor">A Glossary of Our Nine Categories</h2>
+    <p>Short, plain-language definitions for the research areas you'll see across the catalog.</p>
+    <div class="glossary-item">
+      <span class="g-name">Fat Loss &amp; Metabolic</span>
+      <p>Compounds studied for their role in appetite signaling, glucose regulation, or fat-cell metabolism.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Blends &amp; Protocols</span>
+      <p>Multiple compounds pre-combined into a single vial around a shared research theme, rather than sold individually.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Repair &amp; Recovery</span>
+      <p>Compounds studied in tissue, tendon, and wound-healing research models.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Growth Hormone</span>
+      <p>Secretagogues — compounds studied for their effect on the body's own growth-hormone release, rather than growth hormone itself.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Cognitive &amp; Nootropic</span>
+      <p>Compounds studied for effects on focus, memory, or mood-related pathways in the central nervous system.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Longevity</span>
+      <p>Bioregulators and related compounds studied in cellular-aging research, including telomere-related mechanisms.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Sexual &amp; Hormonal</span>
+      <p>Compounds studied in endocrine signaling pathways, including those tied to arousal and reproductive hormone cascades.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Aesthetic &amp; Cosmetic</span>
+      <p>Compounds studied for effects on skin, hair follicles, and connective tissue.</p>
+    </div>
+    <div class="glossary-item">
+      <span class="g-name">Supplies &amp; Cofactors</span>
+      <p>The solvents, buffers, and cofactor compounds used to reconstitute and support the peptides themselves — not peptides in their own right.</p>
+    </div>
+
+    <h2 id="stacking" class="section-anchor">How Researchers Talk About "Stacking"</h2>
+    <p>You'll see the term "stack" used for a set of compounds studied together rather than in isolation — usually because their mechanisms are thought to be complementary. A GH secretagogue paired with a metabolic compound is one common example: one pathway and another are being examined together rather than separately.</p>
+    <p>The stacks on our <a href="index.html#stacks" class="inline-link">Common Stacks</a> page reflect that same idea — pairings built around overlapping or adjacent research areas. They're a starting point for structuring a research order, not a recommendation, dose, or protocol. What to combine, and how, is a matter for your own research design and literature review.</p>
+
+    <div class="legal-note">
+      <strong>In the meantime</strong>
+      Every product page and our <a href="index.html#purity" class="inline-link">Purity &amp; Testing</a> section covers the essentials — HPLC verification, COA access, and storage notes for every compound in stock.
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-simple">
+    <p>© 2026 Goldtide Research. Research use only.</p>
+    <div class="foot-links">
+      <a href="index.html#catalog">Catalog</a>
+      <a href="shop.html">Shop</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="shipping.html">Shipping</a>
+      <a href="mailto:goldtidesresearch@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
