@@ -1,6 +1,0 @@
-{
-  "name": "goldtide-research-site",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Goldtide Research storefront — static site on Cloudflare Pages, with a Pages Function for order emails (Resend) and Turnstile bot protection. Checkout is by Interac e-Transfer."
-}
