@@ -134,11 +134,20 @@
   .brand-name{
     font-family:'Cinzel', serif;
     font-size:1.05rem;
-    font-weight:600;
-    letter-spacing:0.09em;
-    color:var(--bone);
+    font-weight:900;
+    letter-spacing:0.06em;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>"),
+      linear-gradient(180deg, #fdf1c8 0%, #f0d38a 18%, #e8c468 32%, #c9a227 55%, #a3811f 72%, #8a6a18 88%, #6b5110 100%);
+    background-blend-mode: overlay;
+    background-size: 140px 140px, 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.35);
   }
-  .brand-name em{ color: var(--gold-bright); font-style:normal; }
+  .brand-name em{ font-style:normal; }
 
   nav.links{
     display:flex;
@@ -1068,7 +1077,7 @@
     <p class="hero-sub" data-i18n="hero.body">Goldtide Research supplies HPLC-verified compounds for laboratory and in-vitro research, with a batch record behind every vial. Shipped from Canada, priced in CAD. Strictly for research use — not for human or veterinary consumption.</p>
     <div class="hero-cta">
       <a href="#catalog" class="btn solid" data-i18n="hero.browseCatalog">Browse the Catalog</a>
-      <a href="#purity" class="btn" data-i18n="hero.viewCoa">View the COA Library</a>
+      <a href="coa-lookup.html" class="btn" data-i18n="hero.viewCoa">View the COA Library</a>
     </div>
 
     <div class="stat-row">
@@ -1262,6 +1271,7 @@
       <div class="foot-col">
         <span class="label" data-i18n="footer.info">Info</span>
         <a href="#purity" data-i18n="footer.purity">Purity &amp; Testing</a>
+        <a href="coa-lookup.html" data-i18n="coa.title">COA Lookup</a>
         <a href="#stacks" data-i18n="footer.stacks">Common Stacks</a>
         <a href="#supplies" data-i18n="footer.supplies">Injection Supplies</a>
         <a href="#faq" data-i18n="footer.faq">FAQ</a>
