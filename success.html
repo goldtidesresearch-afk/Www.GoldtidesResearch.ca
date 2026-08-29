@@ -34,20 +34,21 @@
 <body>
   <div class="box">
     <div class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#e8c468" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <span class="label">Order Received</span>
-    <h1>Thank you for your order</h1>
-    <p>We've received your order details. Once your Interac e-Transfer arrives, we'll confirm and get it shipped — you'll hear from us by email.</p>
+    <span class="label" data-i18n="success.label">Order Received</span>
+    <h1 data-i18n="success.title">Thank you for your order</h1>
+    <p data-i18n="success.body">We've received your order details. Once your Interac e-Transfer arrives, we'll confirm and get it shipped — you'll hear from us by email.</p>
     <p class="order-id" id="orderRef"></p>
-    <a href="shop.html" class="btn">Continue Shopping →</a>
+    <a href="shop.html" class="btn" data-i18n="success.continueShopping">Continue Shopping →</a>
   </div>
 
+  <script src="assets/i18n.js"></script>
   <script>
     // Cart is already cleared by checkout.html before redirecting here.
     localStorage.removeItem('goldtideCart');
     const params = new URLSearchParams(window.location.search);
     const ref = params.get('ref');
     if (ref){
-      document.getElementById('orderRef').textContent = 'Order Reference: ' + ref;
+      document.getElementById('orderRef').textContent = t('success.orderRef') + ref;
     }
   </script>
 </body>

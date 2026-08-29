@@ -31,6 +31,10 @@
   .brand-name{ font-family:'Cinzel',serif; font-size:0.94rem; font-weight:600; letter-spacing:0.09em; }
   .brand-name em{ font-style:normal; color:var(--gold-bright); }
   .back-link{ font-family:'Oswald',sans-serif; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:9px 16px; transition:all .2s ease; }
+  .lang-switch{ display:flex; border:1px solid var(--line-bright); }
+  .lang-switch button{ font-family:'Oswald', sans-serif; font-size:0.68rem; letter-spacing:0.05em; padding:6px 9px; background:none; border:none; color:var(--muted); cursor:pointer; }
+  .lang-switch button + button{ border-left:1px solid var(--line-bright); }
+  .lang-switch button.active{ background:var(--gold); color:#0a0a0b; }
   .back-link:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
 
   main{ padding:80px 0 120px; }
@@ -72,70 +76,78 @@
       <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
       <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
     </a>
-    <a href="index.html" class="back-link">← Back to Shop</a>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="fr">FR</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <a href="index.html" class="back-link" data-i18n="nav.backToShop">← Back to Shop</a>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="legal-wrap">
-    <div class="legal-eyebrow"><span class="rule"></span><span class="label">Legal</span></div>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 2026</p>
+    <div class="legal-eyebrow"><span class="rule"></span><span class="label" data-i18n="footer.legal">Legal</span></div>
+    <h1 data-i18n="privacy.h1">Privacy Policy</h1>
+    <p class="updated" data-i18n="privacy.updated">Last updated: August 2026</p>
 
-    <p>This Privacy Policy explains what information Goldtide Research collects, how it's used, and the choices you have. We collect only what's needed to process orders and support customers, and we don't sell personal information.</p>
+    <p data-i18n="privacy.intro">This Privacy Policy explains what information Goldtide Research collects, how it's used, and the choices you have. We collect only what's needed to process orders and support customers, and we don't sell personal information.</p>
 
-    <h2>1. Information We Collect</h2>
-    <p>When you place an order or contact us, we may collect your name, email address, shipping address, and phone number. Payment is by Interac e-Transfer sent directly through your own bank — we don't collect or store any banking or card information. We also collect basic site-usage data such as pages visited and browser type, to keep the site working properly.</p>
+    <h2 data-i18n="privacy.h2.1">1. Information We Collect</h2>
+    <p data-i18n-html="privacy.p.1">When you place an order or contact us, we may collect your name, email address, shipping address, and phone number. Payment is by Interac e-Transfer sent directly through your own bank — we don't collect or store any banking or card information. We also collect basic site-usage data such as pages visited and browser type, to keep the site working properly.</p>
 
-    <h2>2. How We Use Information</h2>
+    <h2 data-i18n="privacy.h2.2">2. How We Use Information</h2>
     <ul>
-      <li>To process and ship orders, and to send order-related updates (confirmations, tracking, COA requests).</li>
-      <li>To respond to customer service inquiries.</li>
-      <li>To maintain batch and compliance records as required for the products we sell.</li>
-      <li>To improve the site's performance and content.</li>
+      <li data-i18n="privacy.li.1">To process and ship orders, and to send order-related updates (confirmations, tracking, COA requests).</li>
+      <li data-i18n="privacy.li.2">To respond to customer service inquiries.</li>
+      <li data-i18n="privacy.li.3">To maintain batch and compliance records as required for the products we sell.</li>
+      <li data-i18n="privacy.li.4">To improve the site's performance and content.</li>
     </ul>
 
-    <h2>3. Cookies &amp; Tracking</h2>
-    <p>This site may use cookies or similar technologies for basic functionality, such as keeping items in your cart between pages. We don't use third-party advertising trackers.</p>
+    <h2 data-i18n="privacy.h2.3">3. Cookies &amp; Tracking</h2>
+    <p data-i18n-html="privacy.p.3">This site may use cookies or similar technologies for basic functionality, such as keeping items in your cart between pages. We don't use third-party advertising trackers.</p>
 
-    <h2>4. Sharing Information</h2>
-    <p>We share the minimum information necessary with the parties who help us fulfill your order: payment processors, and shipping carriers. We don't sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+    <h2 data-i18n="privacy.h2.4">4. Sharing Information</h2>
+    <p data-i18n-html="privacy.p.4">We share the minimum information necessary with the parties who help us fulfill your order: payment processors, and shipping carriers. We don't sell, rent, or trade your personal information to third parties for marketing purposes.</p>
 
-    <h2>5. Data Security</h2>
-    <p>We take reasonable technical and organizational measures to protect the information we hold. No method of transmission or storage is 100% secure, but we work to keep customer data protected at every step we control.</p>
+    <h2 data-i18n="privacy.h2.5">5. Data Security</h2>
+    <p data-i18n-html="privacy.p.5">We take reasonable technical and organizational measures to protect the information we hold. No method of transmission or storage is 100% secure, but we work to keep customer data protected at every step we control.</p>
 
-    <h2>6. Your Rights</h2>
-    <p>Under Canadian privacy law (PIPEDA), you can request access to, correction of, or deletion of the personal information we hold about you. To make a request, contact us using the details below.</p>
+    <h2 data-i18n="privacy.h2.6">6. Your Rights</h2>
+    <p data-i18n-html="privacy.p.6">Under Canadian privacy law (PIPEDA), you can request access to, correction of, or deletion of the personal information we hold about you. To make a request, contact us using the details below.</p>
 
-    <h2>7. Age Restriction</h2>
-    <p>This site is intended for use by individuals 18 years of age or older. We do not knowingly collect personal information from minors.</p>
+    <h2 data-i18n="privacy.h2.7">7. Age Restriction</h2>
+    <p data-i18n-html="privacy.p.7">This site is intended for use by individuals 18 years of age or older. We do not knowingly collect personal information from minors.</p>
 
-    <h2>8. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy periodically. The "last updated" date at the top of this page reflects the most recent revision.</p>
+    <h2 data-i18n="privacy.h2.8">8. Changes to This Policy</h2>
+    <p data-i18n-html="privacy.p.8">We may update this Privacy Policy periodically. The "last updated" date at the top of this page reflects the most recent revision.</p>
 
-    <h2>9. Contact</h2>
-    <p>For any privacy-related question or request, reach us at <a href="mailto:goldtidesresearch@gmail.com" class="inline-link">goldtidesresearch@gmail.com</a>.</p>
+    <h2 data-i18n="privacy.h2.9">9. Contact</h2>
+    <p data-i18n-html="privacy.p.9">For any privacy-related question or request, reach us at <a href="mailto:goldtidesresearch@gmail.com" class="inline-link">goldtidesresearch@gmail.com</a>.</p>
 
     <div class="legal-note">
-      <strong>Research Use Only</strong>
-      All products are sold strictly for laboratory and in-vitro research purposes. Purchasers must be 18 or older and are solely responsible for lawful, compliant handling in their jurisdiction.
+      <strong data-i18n="terms.legalNote.strong">Research Use Only</strong>
+      <span data-i18n="terms.legalNote.body">All products are sold strictly for laboratory and in-vitro research purposes. Purchasers must be 18 or older and are solely responsible for lawful, compliant handling in their jurisdiction.</span>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap foot-simple">
-    <p>© 2026 Goldtide Research. Research use only.</p>
+    <p data-i18n="checkout.footerCopyright">© 2026 Goldtide Research. Research use only.</p>
     <div class="foot-links">
-      <a href="index.html#catalog">Catalog</a>
-      <a href="shop.html">Shop</a>
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="shipping.html">Shipping</a>
-      <a href="mailto:goldtidesresearch@gmail.com">Contact</a>
+      <a href="index.html#catalog" data-i18n="simpleFooter.catalog">Catalog</a>
+      <a href="shop.html" data-i18n="simpleFooter.shop">Shop</a>
+      <a href="terms.html" data-i18n="simpleFooter.terms">Terms</a>
+      <a href="privacy.html" data-i18n="simpleFooter.privacy">Privacy</a>
+      <a href="shipping.html" data-i18n="simpleFooter.shipping">Shipping</a>
+      <a href="mailto:goldtidesresearch@gmail.com" data-i18n="simpleFooter.contact">Contact</a>
     </div>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 </body>
 </html>

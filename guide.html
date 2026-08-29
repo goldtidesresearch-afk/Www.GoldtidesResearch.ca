@@ -31,6 +31,10 @@
   .brand-name{ font-family:'Cinzel',serif; font-size:0.94rem; font-weight:600; letter-spacing:0.09em; }
   .brand-name em{ font-style:normal; color:var(--gold-bright); }
   .back-link{ font-family:'Oswald',sans-serif; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:9px 16px; transition:all .2s ease; }
+  .lang-switch{ display:flex; border:1px solid var(--line-bright); }
+  .lang-switch button{ font-family:'Oswald', sans-serif; font-size:0.68rem; letter-spacing:0.05em; padding:6px 9px; background:none; border:none; color:var(--muted); cursor:pointer; }
+  .lang-switch button + button{ border-left:1px solid var(--line-bright); }
+  .lang-switch button.active{ background:var(--gold); color:#0a0a0b; }
   .back-link:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
 
   main{ padding:80px 0 120px; }
@@ -105,134 +109,142 @@
       <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
       <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
     </a>
-    <a href="index.html" class="back-link">← Back to Shop</a>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="fr">FR</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <a href="index.html" class="back-link" data-i18n="nav.backToShop">← Back to Shop</a>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="legal-wrap">
-    <div class="legal-eyebrow"><span class="rule"></span><span class="label">New To Research Peptides?</span></div>
-    <h1>The Goldtide Reference Guide</h1>
-    <p class="updated">The essentials on reading a COA, handling and storing lyophilized compounds, and what each of our nine research categories actually covers.</p>
+    <div class="legal-eyebrow"><span class="rule"></span><span class="label" data-i18n="guide.eyebrow">New To Research Peptides?</span></div>
+    <h1 data-i18n="guide.title">The Goldtide Reference Guide</h1>
+    <p class="updated" data-i18n="guide.subtitle">The essentials on reading a COA, handling and storing lyophilized compounds, and what each of our nine research categories actually covers.</p>
 
     <ul class="toc">
-      <li><a href="#coa">Reading a COA</a></li>
-      <li><a href="#handling">Reconstitution &amp; Handling</a></li>
-      <li><a href="#appearance">Appearance &amp; Color</a></li>
-      <li><a href="#storage">Storage &amp; Stability</a></li>
-      <li><a href="#glossary">Category Glossary</a></li>
-      <li><a href="#stacking">On Stacking</a></li>
-      <li><a href="library.html">Peptide Library</a></li>
+      <li><a href="#coa" data-i18n="guide.toc.coa">Reading a COA</a></li>
+      <li><a href="#handling" data-i18n="guide.toc.handling">Reconstitution &amp; Handling</a></li>
+      <li><a href="#appearance" data-i18n="guide.toc.appearance">Appearance &amp; Color</a></li>
+      <li><a href="#storage" data-i18n="guide.toc.storage">Storage &amp; Stability</a></li>
+      <li><a href="#glossary" data-i18n="guide.toc.glossary">Category Glossary</a></li>
+      <li><a href="#stacking" data-i18n="guide.toc.stacking">On Stacking</a></li>
+      <li><a href="library.html" data-i18n="footer.library">Peptide Library</a></li>
     </ul>
 
-    <h2 id="coa" class="section-anchor">Reading a Certificate of Analysis</h2>
-    <p>A Certificate of Analysis (COA) is the lab report behind a given production batch. It's how a claim like "≥99% pure" gets verified rather than just stated. Most COAs you'll come across are built around a handful of core sections:</p>
+    <h2 id="coa" class="section-anchor" data-i18n="guide.coa.h2">Reading a Certificate of Analysis</h2>
+    <p data-i18n="guide.coa.p1">A Certificate of Analysis (COA) is the lab report behind a given production batch. It's how a claim like "≥99% pure" gets verified rather than just stated. Most COAs you'll come across are built around a handful of core sections:</p>
     <ul>
-      <li><strong>Identity confirmation</strong> — usually mass spectrometry, confirming the molecule's actual mass matches what's expected for that compound. This is what tells you the vial contains the right peptide, not a look-alike or degraded fragment.</li>
-      <li><strong>Purity</strong> — typically from HPLC (high-performance liquid chromatography), which separates a sample into its components and reports the main compound as a percentage of the total peak area. A few smaller peaks alongside the main one are normal; they represent trace synthesis byproducts.</li>
-      <li><strong>Batch or lot number</strong> — ties the report to one specific production run. This is the number to cross-reference against the label on your vial — a COA is only meaningful if it matches the batch you actually received.</li>
-      <li><strong>Testing lab and date</strong> — ideally an independent third-party lab, not an in-house one, since that's what makes the result a check rather than a claim.</li>
-      <li><strong>Endotoxin or heavy-metal screening</strong> — included by some labs, not all. Where present, it's an added layer beyond identity and purity.</li>
+      <li data-i18n-html="guide.coa.li1"><strong>Identity confirmation</strong> — usually mass spectrometry, confirming the molecule's actual mass matches what's expected for that compound. This is what tells you the vial contains the right peptide, not a look-alike or degraded fragment.</li>
+      <li data-i18n-html="guide.coa.li2"><strong>Purity</strong> — typically from HPLC (high-performance liquid chromatography), which separates a sample into its components and reports the main compound as a percentage of the total peak area. A few smaller peaks alongside the main one are normal; they represent trace synthesis byproducts.</li>
+      <li data-i18n-html="guide.coa.li3"><strong>Batch or lot number</strong> — ties the report to one specific production run. This is the number to cross-reference against the label on your vial — a COA is only meaningful if it matches the batch you actually received.</li>
+      <li data-i18n-html="guide.coa.li4"><strong>Testing lab and date</strong> — ideally an independent third-party lab, not an in-house one, since that's what makes the result a check rather than a claim.</li>
+      <li data-i18n-html="guide.coa.li5"><strong>Endotoxin or heavy-metal screening</strong> — included by some labs, not all. Where present, it's an added layer beyond identity and purity.</li>
     </ul>
-    <p>When in doubt about a specific COA, the lot number is the fastest way to confirm you're looking at the right one — it should match your vial exactly, not just the compound name.</p>
+    <p data-i18n="guide.coa.p2">When in doubt about a specific COA, the lot number is the fastest way to confirm you're looking at the right one — it should match your vial exactly, not just the compound name.</p>
 
-    <h2 id="handling" class="section-anchor">Reconstitution &amp; Handling</h2>
-    <p>Lyophilized (freeze-dried) peptides ship as a stable powder and need to be brought into solution before use. The mechanics of that process matter more than people expect:</p>
+    <h2 id="handling" class="section-anchor" data-i18n="guide.handling.h2">Reconstitution &amp; Handling</h2>
+    <p data-i18n="guide.handling.p1">Lyophilized (freeze-dried) peptides ship as a stable powder and need to be brought into solution before use. The mechanics of that process matter more than people expect:</p>
     <ul>
-      <li><strong>Sterile technique throughout.</strong> Wipe the stopper with an alcohol swab before every needle insertion, on both the peptide vial and the diluent vial.</li>
-      <li><strong>Add diluent slowly, down the inside wall of the vial</strong> — not directly onto the powder. A fast stream can shear the peptide structure on contact.</li>
-      <li><strong>Swirl gently to dissolve — don't shake.</strong> Agitation from shaking can denature a peptide's folded structure, the same way whisking egg whites changes their protein structure irreversibly.</li>
-      <li><strong>Let it settle and inspect.</strong> A properly reconstituted solution is typically clear, with no visible particulate. Cloudiness can indicate a problem with that reconstitution.</li>
-      <li><strong>Refrigerate immediately once dissolved.</strong> A reconstituted peptide is far less stable than the lyophilized powder it came from.</li>
+      <li data-i18n-html="guide.handling.li1"><strong>Sterile technique throughout.</strong> Wipe the stopper with an alcohol swab before every needle insertion, on both the peptide vial and the diluent vial.</li>
+      <li data-i18n-html="guide.handling.li2"><strong>Add diluent slowly, down the inside wall of the vial</strong> — not directly onto the powder. A fast stream can shear the peptide structure on contact.</li>
+      <li data-i18n-html="guide.handling.li3"><strong>Swirl gently to dissolve — don't shake.</strong> Agitation from shaking can denature a peptide's folded structure, the same way whisking egg whites changes their protein structure irreversibly.</li>
+      <li data-i18n-html="guide.handling.li4"><strong>Let it settle and inspect.</strong> A properly reconstituted solution is typically clear, with no visible particulate. Cloudiness can indicate a problem with that reconstitution.</li>
+      <li data-i18n-html="guide.handling.li5"><strong>Refrigerate immediately once dissolved.</strong> A reconstituted peptide is far less stable than the lyophilized powder it came from.</li>
     </ul>
-    <p>This page covers the general mechanics of reconstitution, not dosing or administration protocols — those are a matter for your own research design.</p>
+    <p data-i18n="guide.handling.p2">This page covers the general mechanics of reconstitution, not dosing or administration protocols — those are a matter for your own research design.</p>
 
-    <h2 id="appearance" class="section-anchor">Appearance &amp; Color</h2>
-    <p>What a vial looks like — before and after reconstitution — is one of the simplest checks available to you, and worth knowing before you need it.</p>
+    <h2 id="appearance" class="section-anchor" data-i18n="guide.appearance.h2">Appearance &amp; Color</h2>
+    <p data-i18n="guide.appearance.p1">What a vial looks like — before and after reconstitution — is one of the simplest checks available to you, and worth knowing before you need it.</p>
     <ul>
-      <li><strong>Lyophilized powder (unreconstituted):</strong> normal appearance is a white or off-white cake or fine powder, sometimes appearing as a thin film pressed against the glass rather than a loose powder — that's a normal effect of the freeze-drying process, not a sign of a problem. Some compounds naturally lyophilize into a more compact pellet than others.</li>
-      <li><strong>Reconstituted solution:</strong> normal appearance is clear and colorless to very faintly straw-colored, with no visible particles once fully dissolved. Some compounds (certain B-vitamin or NAD-related blends, for instance) can have an inherent pale yellow tint even when correctly mixed — that's a property of the compound itself, not a defect.</li>
-      <li><strong>Warning signs:</strong> persistent cloudiness or turbidity after swirling, visible flecks or fibers that don't dissolve, an unexpected color shift, or any separation into distinct layers. Any of these can indicate a contamination, degradation, or reconstitution issue.</li>
+      <li data-i18n-html="guide.appearance.li1"><strong>Lyophilized powder (unreconstituted):</strong> normal appearance is a white or off-white cake or fine powder, sometimes appearing as a thin film pressed against the glass rather than a loose powder — that's a normal effect of the freeze-drying process, not a sign of a problem. Some compounds naturally lyophilize into a more compact pellet than others.</li>
+      <li data-i18n-html="guide.appearance.li2"><strong>Reconstituted solution:</strong> normal appearance is clear and colorless to very faintly straw-colored, with no visible particles once fully dissolved. Some compounds (certain B-vitamin or NAD-related blends, for instance) can have an inherent pale yellow tint even when correctly mixed — that's a property of the compound itself, not a defect.</li>
+      <li data-i18n-html="guide.appearance.li3"><strong>Warning signs:</strong> persistent cloudiness or turbidity after swirling, visible flecks or fibers that don't dissolve, an unexpected color shift, or any separation into distinct layers. Any of these can indicate a contamination, degradation, or reconstitution issue.</li>
     </ul>
-    <p>If a vial looks off either before or after reconstitution, don't use it — get in touch with your batch number and we'll sort out a COA check or replacement.</p>
+    <p data-i18n="guide.appearance.p2">If a vial looks off either before or after reconstitution, don't use it — get in touch with your batch number and we'll sort out a COA check or replacement.</p>
 
-    <h2 id="storage" class="section-anchor">Storage &amp; Stability</h2>
-    <p>Peptide stability comes down to three enemies: heat, light, and time in solution.</p>
+    <h2 id="storage" class="section-anchor" data-i18n="guide.storage.h2">Storage &amp; Stability</h2>
+    <p data-i18n="guide.storage.p1">Peptide stability comes down to three enemies: heat, light, and time in solution.</p>
     <ul>
-      <li><strong>Unopened, lyophilized:</strong> stable at room temperature for the short term, which is what allows standard shipping. For longer-term storage, a fridge (2–8°C) is better, and a freezer (well below 0°C) is best for extended periods.</li>
-      <li><strong>Reconstituted:</strong> keep refrigerated at all times, and use within the window noted for that specific compound — reconstituted peptides generally have a much shorter usable life than the dry powder.</li>
-      <li><strong>Avoid freeze-thaw cycling.</strong> Repeatedly freezing and thawing a reconstituted solution accelerates degradation. If you need multiple sessions from one vial, keep it refrigerated between uses rather than freezing and rethawing.</li>
-      <li><strong>Keep it dark.</strong> UV and even ordinary light exposure can degrade some peptides over time — the amber or foil packaging many vials ship in isn't just branding.</li>
+      <li data-i18n-html="guide.storage.li1"><strong>Unopened, lyophilized:</strong> stable at room temperature for the short term, which is what allows standard shipping. For longer-term storage, a fridge (2–8°C) is better, and a freezer (well below 0°C) is best for extended periods.</li>
+      <li data-i18n-html="guide.storage.li2"><strong>Reconstituted:</strong> keep refrigerated at all times, and use within the window noted for that specific compound — reconstituted peptides generally have a much shorter usable life than the dry powder.</li>
+      <li data-i18n-html="guide.storage.li3"><strong>Avoid freeze-thaw cycling.</strong> Repeatedly freezing and thawing a reconstituted solution accelerates degradation. If you need multiple sessions from one vial, keep it refrigerated between uses rather than freezing and rethawing.</li>
+      <li data-i18n-html="guide.storage.li4"><strong>Keep it dark.</strong> UV and even ordinary light exposure can degrade some peptides over time — the amber or foil packaging many vials ship in isn't just branding.</li>
     </ul>
 
     <figure class="guide-figure">
       <img src="assets/guides/peptide-storage-guide.png" alt="Goldtide Research peptide storage reference: refrigerated, frozen, and deep-frozen stability windows for lyophilized peptides, plus handling notes.">
-      <figcaption>A quick reference for lyophilized peptide storage and stability. Always check the specific notes for your compound.</figcaption>
+      <figcaption data-i18n="guide.figCaption">A quick reference for lyophilized peptide storage and stability. Always check the specific notes for your compound.</figcaption>
     </figure>
 
-    <h2 id="glossary" class="section-anchor">A Glossary of Our Nine Categories</h2>
-    <p>Short, plain-language definitions for the research areas you'll see across the catalog.</p>
+    <h2 id="glossary" class="section-anchor" data-i18n="guide.glossary.h2">A Glossary of Our Nine Categories</h2>
+    <p data-i18n="guide.glossary.p1">Short, plain-language definitions for the research areas you'll see across the catalog.</p>
     <div class="glossary-item">
-      <span class="g-name">Fat Loss &amp; Metabolic</span>
-      <p>Compounds studied for their role in appetite signaling, glucose regulation, or fat-cell metabolism.</p>
+      <span class="g-name" data-i18n-cat="weight">Fat Loss &amp; Metabolic</span>
+      <p data-i18n="guide.glossary.weight.desc">Compounds studied for their role in appetite signaling, glucose regulation, or fat-cell metabolism.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Blends &amp; Protocols</span>
-      <p>Multiple compounds pre-combined into a single vial around a shared research theme, rather than sold individually.</p>
+      <span class="g-name" data-i18n-cat="blends">Blends &amp; Protocols</span>
+      <p data-i18n="guide.glossary.blends.desc">Multiple compounds pre-combined into a single vial around a shared research theme, rather than sold individually.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Repair &amp; Recovery</span>
-      <p>Compounds studied in tissue, tendon, and wound-healing research models.</p>
+      <span class="g-name" data-i18n-cat="repair">Repair &amp; Recovery</span>
+      <p data-i18n="guide.glossary.repair.desc">Compounds studied in tissue, tendon, and wound-healing research models.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Growth Hormone</span>
-      <p>Secretagogues — compounds studied for their effect on the body's own growth-hormone release, rather than growth hormone itself.</p>
+      <span class="g-name" data-i18n-cat="gh">Growth Hormone</span>
+      <p data-i18n="guide.glossary.gh.desc">Secretagogues — compounds studied for their effect on the body's own growth-hormone release, rather than growth hormone itself.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Cognitive &amp; Nootropic</span>
-      <p>Compounds studied for effects on focus, memory, or mood-related pathways in the central nervous system.</p>
+      <span class="g-name" data-i18n-cat="cognitive">Cognitive &amp; Nootropic</span>
+      <p data-i18n="guide.glossary.cognitive.desc">Compounds studied for effects on focus, memory, or mood-related pathways in the central nervous system.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Longevity</span>
-      <p>Bioregulators and related compounds studied in cellular-aging research, including telomere-related mechanisms.</p>
+      <span class="g-name" data-i18n-cat="longevity">Longevity</span>
+      <p data-i18n="guide.glossary.longevity.desc">Bioregulators and related compounds studied in cellular-aging research, including telomere-related mechanisms.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Sexual &amp; Hormonal</span>
-      <p>Compounds studied in endocrine signaling pathways, including those tied to arousal and reproductive hormone cascades.</p>
+      <span class="g-name" data-i18n-cat="hormonal">Sexual &amp; Hormonal</span>
+      <p data-i18n="guide.glossary.hormonal.desc">Compounds studied in endocrine signaling pathways, including those tied to arousal and reproductive hormone cascades.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Aesthetic &amp; Cosmetic</span>
-      <p>Compounds studied for effects on skin, hair follicles, and connective tissue.</p>
+      <span class="g-name" data-i18n-cat="cosmetic">Aesthetic &amp; Cosmetic</span>
+      <p data-i18n="guide.glossary.cosmetic.desc">Compounds studied for effects on skin, hair follicles, and connective tissue.</p>
     </div>
     <div class="glossary-item">
-      <span class="g-name">Supplies &amp; Cofactors</span>
-      <p>The solvents, buffers, and cofactor compounds used to reconstitute and support the peptides themselves — not peptides in their own right.</p>
+      <span class="g-name" data-i18n-cat="supplements">Supplies &amp; Cofactors</span>
+      <p data-i18n="guide.glossary.supplements.desc">The solvents, buffers, and cofactor compounds used to reconstitute and support the peptides themselves — not peptides in their own right.</p>
     </div>
 
-    <h2 id="stacking" class="section-anchor">How Researchers Talk About "Stacking"</h2>
-    <p>You'll see the term "stack" used for a set of compounds studied together rather than in isolation — usually because their mechanisms are thought to be complementary. A GH secretagogue paired with a metabolic compound is one common example: one pathway and another are being examined together rather than separately.</p>
-    <p>The stacks on our <a href="index.html#stacks" class="inline-link">Common Stacks</a> page reflect that same idea — pairings built around overlapping or adjacent research areas. They're a starting point for structuring a research order, not a recommendation, dose, or protocol. What to combine, and how, is a matter for your own research design and literature review.</p>
+    <h2 id="stacking" class="section-anchor" data-i18n="guide.stacking.h2">How Researchers Talk About "Stacking"</h2>
+    <p data-i18n="guide.stacking.p1">You'll see the term "stack" used for a set of compounds studied together rather than in isolation — usually because their mechanisms are thought to be complementary. A GH secretagogue paired with a metabolic compound is one common example: one pathway and another are being examined together rather than separately.</p>
+    <p data-i18n-html="guide.stacking.p2">The stacks on our <a href="index.html#stacks" class="inline-link">Common Stacks</a> page reflect that same idea — pairings built around overlapping or adjacent research areas. They're a starting point for structuring a research order, not a recommendation, dose, or protocol. What to combine, and how, is a matter for your own research design and literature review.</p>
 
     <div class="legal-note">
-      <strong>In the meantime</strong>
-      Every product page and our <a href="index.html#purity" class="inline-link">Purity &amp; Testing</a> section covers the essentials — HPLC verification, COA access, and storage notes for every compound in stock.
+      <strong data-i18n="guide.legalNote.strong">In the meantime</strong>
+      <span data-i18n-html="guide.legalNote.body">Every product page and our <a href="index.html#purity" class="inline-link">Purity &amp; Testing</a> section covers the essentials — HPLC verification, COA access, and storage notes for every compound in stock.</span>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap foot-simple">
-    <p>© 2026 Goldtide Research. Research use only.</p>
+    <p data-i18n="checkout.footerCopyright">© 2026 Goldtide Research. Research use only.</p>
     <div class="foot-links">
-      <a href="index.html#catalog">Catalog</a>
-      <a href="shop.html">Shop</a>
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="shipping.html">Shipping</a>
-      <a href="mailto:goldtidesresearch@gmail.com">Contact</a>
+      <a href="index.html#catalog" data-i18n="simpleFooter.catalog">Catalog</a>
+      <a href="shop.html" data-i18n="simpleFooter.shop">Shop</a>
+      <a href="terms.html" data-i18n="simpleFooter.terms">Terms</a>
+      <a href="privacy.html" data-i18n="simpleFooter.privacy">Privacy</a>
+      <a href="shipping.html" data-i18n="simpleFooter.shipping">Shipping</a>
+      <a href="mailto:goldtidesresearch@gmail.com" data-i18n="simpleFooter.contact">Contact</a>
     </div>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 </body>
 </html>

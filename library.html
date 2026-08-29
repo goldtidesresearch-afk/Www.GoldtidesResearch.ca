@@ -31,6 +31,10 @@
   .brand-name{ font-family:'Cinzel',serif; font-size:0.94rem; font-weight:600; letter-spacing:0.09em; }
   .brand-name em{ font-style:normal; color:var(--gold-bright); }
   .back-link{ font-family:'Oswald',sans-serif; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:9px 16px; transition:all .2s ease; }
+  .lang-switch{ display:flex; border:1px solid var(--line-bright); }
+  .lang-switch button{ font-family:'Oswald', sans-serif; font-size:0.68rem; letter-spacing:0.05em; padding:6px 9px; background:none; border:none; color:var(--muted); cursor:pointer; }
+  .lang-switch button + button{ border-left:1px solid var(--line-bright); }
+  .lang-switch button.active{ background:var(--gold); color:#0a0a0b; }
   .back-link:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
 
   main{ padding:80px 0 120px; }
@@ -105,226 +109,234 @@
       <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
       <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
     </a>
-    <a href="index.html" class="back-link">← Back to Shop</a>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="fr">FR</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <a href="index.html" class="back-link" data-i18n="nav.backToShop">← Back to Shop</a>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="legal-wrap">
-    <div class="legal-eyebrow"><span class="rule"></span><span class="label">Compound Reference</span></div>
-    <h1>The Peptide Library</h1>
-    <p class="updated">A plain-language reference for every compound in our catalog, organized by research category. This is an identity and background reference, not a dosing or protocol guide — see the <a href="guide.html" class="inline-link">Reference Guide</a> for reconstitution mechanics and storage.</p>
+    <div class="legal-eyebrow"><span class="rule"></span><span class="label" data-i18n="library.eyebrow">Compound Reference</span></div>
+    <h1 data-i18n="library.title">The Peptide Library</h1>
+    <p class="updated" data-i18n-html="library.subtitle">A plain-language reference for every compound in our catalog, organized by research category. This is an identity and background reference, not a dosing or protocol guide — see the <a href="guide.html" class="inline-link">Reference Guide</a> for reconstitution mechanics and storage.</p>
 
     <ul class="toc">
-      <li><a href="#lib-weight">Fat Loss &amp; Metabolic</a></li>
-      <li><a href="#lib-blends">Blends &amp; Protocols</a></li>
-      <li><a href="#lib-repair">Repair &amp; Recovery</a></li>
-      <li><a href="#lib-gh">Growth Hormone</a></li>
-      <li><a href="#lib-cognitive">Cognitive &amp; Nootropic</a></li>
-      <li><a href="#lib-longevity">Longevity</a></li>
-      <li><a href="#lib-hormonal">Sexual &amp; Hormonal</a></li>
-      <li><a href="#lib-cosmetic">Aesthetic &amp; Cosmetic</a></li>
-      <li><a href="#lib-supplements">Supplies &amp; Cofactors</a></li>
+      <li><a href="#lib-weight" data-i18n-cat="weight">Fat Loss &amp; Metabolic</a></li>
+      <li><a href="#lib-blends" data-i18n-cat="blends">Blends &amp; Protocols</a></li>
+      <li><a href="#lib-repair" data-i18n-cat="repair">Repair &amp; Recovery</a></li>
+      <li><a href="#lib-gh" data-i18n-cat="gh">Growth Hormone</a></li>
+      <li><a href="#lib-cognitive" data-i18n-cat="cognitive">Cognitive &amp; Nootropic</a></li>
+      <li><a href="#lib-longevity" data-i18n-cat="longevity">Longevity</a></li>
+      <li><a href="#lib-hormonal" data-i18n-cat="hormonal">Sexual &amp; Hormonal</a></li>
+      <li><a href="#lib-cosmetic" data-i18n-cat="cosmetic">Aesthetic &amp; Cosmetic</a></li>
+      <li><a href="#lib-supplements" data-i18n-cat="supplements">Supplies &amp; Cofactors</a></li>
     </ul>
 
-    <h2 id="lib-weight" class="section-anchor">Fat Loss &amp; Metabolic</h2>
+    <h2 id="lib-weight" class="section-anchor" data-i18n-cat="weight">Fat Loss &amp; Metabolic</h2>
     <div class="glossary-item">
       <span class="g-name">5-Amino-1MQ</span>
-      <p>An NNMT-inhibitor class compound, studied in metabolic research for its role in cellular NAD+ regulation and fat-cell energy metabolism.</p>
+      <p data-i18n-lib="5-Amino-1MQ">An NNMT-inhibitor class compound, studied in metabolic research for its role in cellular NAD+ regulation and fat-cell energy metabolism.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">AOD-9604</span>
-      <p>A modified fragment of human growth hormone (amino acids 176–191), studied in isolation from the rest of the GH molecule for effects on fat metabolism specifically.</p>
+      <p data-i18n-lib="AOD-9604">A modified fragment of human growth hormone (amino acids 176–191), studied in isolation from the rest of the GH molecule for effects on fat metabolism specifically.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Cagrilintide</span>
-      <p>A long-acting amylin analog, studied alongside GLP-1 agonist pathways for its role in satiety signaling.</p>
+      <p data-i18n-lib="Cagrilintide">A long-acting amylin analog, studied alongside GLP-1 agonist pathways for its role in satiety signaling.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">MOTS-c</span>
-      <p>A mitochondrial-derived peptide encoded in mitochondrial DNA, studied for its role activating AMPK, a central regulator of cellular energy metabolism.</p>
+      <p data-i18n-lib="MOTS-c">A mitochondrial-derived peptide encoded in mitochondrial DNA, studied for its role activating AMPK, a central regulator of cellular energy metabolism.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Retatrutide</span>
-      <p>A triple-agonist compound acting across GIP, GLP-1, and glucagon receptor pathways simultaneously, among the most extensively studied compounds in current metabolic research.</p>
+      <p data-i18n-lib="Retatrutide">A triple-agonist compound acting across GIP, GLP-1, and glucagon receptor pathways simultaneously, among the most extensively studied compounds in current metabolic research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">SS-31</span>
-      <p>A mitochondria-targeted peptide that concentrates in the inner mitochondrial membrane, studied in oxidative-stress and cellular-energy models.</p>
+      <p data-i18n-lib="SS-31">A mitochondria-targeted peptide that concentrates in the inner mitochondrial membrane, studied in oxidative-stress and cellular-energy models.</p>
     </div>
 
-    <h2 id="lib-blends" class="section-anchor">Blends &amp; Protocols</h2>
+    <h2 id="lib-blends" class="section-anchor" data-i18n-cat="blends">Blends &amp; Protocols</h2>
     <div class="glossary-item">
       <span class="g-name">GLOW</span>
-      <p>A three-compound blend combining repair-focused peptides with a copper tripeptide, studied across skin, hair, and tissue-repair research models.</p>
+      <p data-i18n-lib="GLOW">A three-compound blend combining repair-focused peptides with a copper tripeptide, studied across skin, hair, and tissue-repair research models.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">HHB</span>
-      <p>A nine-part B-vitamin and choline blend, formulated as a cofactor-support vial for methylation and metabolic-pathway research.</p>
+      <p data-i18n-lib="HHB">A nine-part B-vitamin and choline blend, formulated as a cofactor-support vial for methylation and metabolic-pathway research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">KLOW</span>
-      <p>A four-compound blend studied together in gut, joint, and skin inflammation research models.</p>
+      <p data-i18n-lib="KLOW">A four-compound blend studied together in gut, joint, and skin inflammation research models.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Semax + Selank Blend</span>
-      <p>A combined vial pairing two Russian-developed neuropeptides, studied together for their overlapping effects on cognitive and anxiolytic pathways.</p>
+      <p data-i18n-lib="Semax + Selank Blend">A combined vial pairing two Russian-developed neuropeptides, studied together for their overlapping effects on cognitive and anxiolytic pathways.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">SHB</span>
-      <p>A nine-part amino-acid and NAC (N-acetylcysteine) blend, formulated for combined antioxidant and cofactor-pathway research.</p>
+      <p data-i18n-lib="SHB">A nine-part amino-acid and NAC (N-acetylcysteine) blend, formulated for combined antioxidant and cofactor-pathway research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Wolverine (BPC-157 + TB-500)</span>
-      <p>A pre-combined vial of two of the most widely studied repair peptides, packaged together for whole-body tissue-repair research.</p>
+      <p data-i18n-lib="Wolverine (BPC-157 + TB-500)">A pre-combined vial of two of the most widely studied repair peptides, packaged together for whole-body tissue-repair research.</p>
     </div>
 
-    <h2 id="lib-repair" class="section-anchor">Repair &amp; Recovery</h2>
+    <h2 id="lib-repair" class="section-anchor" data-i18n-cat="repair">Repair &amp; Recovery</h2>
     <div class="glossary-item">
       <span class="g-name">BPC-157</span>
-      <p>A synthetic fragment derived from a protein found in gastric juice. One of the most studied repair peptides, examined for its role in angiogenesis and tendon-healing signaling.</p>
+      <p data-i18n-lib="BPC-157">A synthetic fragment derived from a protein found in gastric juice. One of the most studied repair peptides, examined for its role in angiogenesis and tendon-healing signaling.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">GHK-Cu</span>
-      <p>A naturally occurring copper tripeptide, studied for its role activating genes associated with tissue repair and collagen production.</p>
+      <p data-i18n-lib="GHK-Cu">A naturally occurring copper tripeptide, studied for its role activating genes associated with tissue repair and collagen production.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">KPV</span>
-      <p>A tripeptide fragment of alpha-MSH, studied for anti-inflammatory signaling independent of the parent hormone's other effects.</p>
+      <p data-i18n-lib="KPV">A tripeptide fragment of alpha-MSH, studied for anti-inflammatory signaling independent of the parent hormone's other effects.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">TB-500</span>
-      <p>A synthetic fragment of Thymosin Beta-4, studied for whole-body repair signaling and its role in cell migration and vascular formation.</p>
+      <p data-i18n-lib="TB-500">A synthetic fragment of Thymosin Beta-4, studied for whole-body repair signaling and its role in cell migration and vascular formation.</p>
     </div>
 
-    <h2 id="lib-gh" class="section-anchor">Growth Hormone</h2>
+    <h2 id="lib-gh" class="section-anchor" data-i18n-cat="gh">Growth Hormone</h2>
     <div class="glossary-item">
       <span class="g-name">CJC-1295 (No DAC) + Ipamorelin</span>
-      <p>A combined GHRH/GHRP protocol pairing a growth-hormone-releasing hormone analog with a selective secretagogue, studied together for pulsatile growth-hormone release patterns.</p>
+      <p data-i18n-lib="CJC-1295 (No DAC) + Ipamorelin">A combined GHRH/GHRP protocol pairing a growth-hormone-releasing hormone analog with a selective secretagogue, studied together for pulsatile growth-hormone release patterns.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Ipamorelin</span>
-      <p>A selective growth-hormone-releasing peptide (GHRP), studied for stimulating GH release without the cortisol or prolactin elevation seen with earlier-generation secretagogues.</p>
+      <p data-i18n-lib="Ipamorelin">A selective growth-hormone-releasing peptide (GHRP), studied for stimulating GH release without the cortisol or prolactin elevation seen with earlier-generation secretagogues.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Sermorelin</span>
-      <p>A GHRH analog representing the first 29 amino acids of growth-hormone-releasing hormone — among the earliest secretagogues studied and used clinically.</p>
+      <p data-i18n-lib="Sermorelin">A GHRH analog representing the first 29 amino acids of growth-hormone-releasing hormone — among the earliest secretagogues studied and used clinically.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Tesamorelin</span>
-      <p>A stabilized GHRH analog, studied specifically in visceral-fat research and one of the few compounds in this class with an established clinical research history.</p>
+      <p data-i18n-lib="Tesamorelin">A stabilized GHRH analog, studied specifically in visceral-fat research and one of the few compounds in this class with an established clinical research history.</p>
     </div>
 
-    <h2 id="lib-cognitive" class="section-anchor">Cognitive &amp; Nootropic</h2>
+    <h2 id="lib-cognitive" class="section-anchor" data-i18n-cat="cognitive">Cognitive &amp; Nootropic</h2>
     <div class="glossary-item">
       <span class="g-name">DSIP</span>
-      <p>Delta Sleep-Inducing Peptide, first isolated from rabbit brain tissue, studied for its influence on slow-wave sleep architecture.</p>
+      <p data-i18n-lib="DSIP">Delta Sleep-Inducing Peptide, first isolated from rabbit brain tissue, studied for its influence on slow-wave sleep architecture.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Selank</span>
-      <p>A synthetic analog of a naturally occurring immunomodulatory peptide, studied in Russian research for anxiolytic effects without the sedation associated with benzodiazepines.</p>
+      <p data-i18n-lib="Selank">A synthetic analog of a naturally occurring immunomodulatory peptide, studied in Russian research for anxiolytic effects without the sedation associated with benzodiazepines.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Semax</span>
-      <p>A synthetic peptide derived from ACTH, studied for effects on focus, memory consolidation, and neuroprotective pathways in the central nervous system.</p>
+      <p data-i18n-lib="Semax">A synthetic peptide derived from ACTH, studied for effects on focus, memory consolidation, and neuroprotective pathways in the central nervous system.</p>
     </div>
 
-    <h2 id="lib-longevity" class="section-anchor">Longevity</h2>
+    <h2 id="lib-longevity" class="section-anchor" data-i18n-cat="longevity">Longevity</h2>
     <div class="glossary-item">
       <span class="g-name">Epithalon</span>
-      <p>A synthetic tetrapeptide studied for its proposed role in telomerase activation — among the most studied compounds in longevity-focused peptide research.</p>
+      <p data-i18n-lib="Epithalon">A synthetic tetrapeptide studied for its proposed role in telomerase activation — among the most studied compounds in longevity-focused peptide research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Pinealon</span>
-      <p>A short tripeptide studied in brain-targeted aging research, proposed to support neuronal regulatory function.</p>
+      <p data-i18n-lib="Pinealon">A short tripeptide studied in brain-targeted aging research, proposed to support neuronal regulatory function.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Thymosin Alpha-1</span>
-      <p>An immune-regulating peptide with a long research and clinical history, studied and approved under other names in numerous countries for immune-modulation research.</p>
+      <p data-i18n-lib="Thymosin Alpha-1">An immune-regulating peptide with a long research and clinical history, studied and approved under other names in numerous countries for immune-modulation research.</p>
     </div>
 
-    <h2 id="lib-hormonal" class="section-anchor">Sexual &amp; Hormonal</h2>
+    <h2 id="lib-hormonal" class="section-anchor" data-i18n-cat="hormonal">Sexual &amp; Hormonal</h2>
     <div class="glossary-item">
       <span class="g-name">HCG</span>
-      <p>Human Chorionic Gonadotropin, a glycoprotein hormone that mimics luteinizing hormone (LH), studied in testosterone-pathway and reproductive-endocrine research.</p>
+      <p data-i18n-lib="HCG">Human Chorionic Gonadotropin, a glycoprotein hormone that mimics luteinizing hormone (LH), studied in testosterone-pathway and reproductive-endocrine research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Kisspeptin-10</span>
-      <p>A fragment of the kisspeptin peptide, studied for its role as an upstream activator of the body's own LH/FSH release cascade.</p>
+      <p data-i18n-lib="Kisspeptin-10">A fragment of the kisspeptin peptide, studied for its role as an upstream activator of the body's own LH/FSH release cascade.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Melanotan I</span>
-      <p>A selective melanocortin-1 receptor agonist, studied specifically in pigmentation research.</p>
+      <p data-i18n-lib="Melanotan I">A selective melanocortin-1 receptor agonist, studied specifically in pigmentation research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Melanotan II</span>
-      <p>A broader melanocortin receptor agonist affecting multiple receptor subtypes, and the parent compound from which PT-141 was derived.</p>
+      <p data-i18n-lib="Melanotan II">A broader melanocortin receptor agonist affecting multiple receptor subtypes, and the parent compound from which PT-141 was derived.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">PT-141</span>
-      <p>Bremelanotide, a melanocortin agonist studied for central-nervous-system pathways related to arousal, distinct from the vascular mechanism used in other approaches in this research area.</p>
+      <p data-i18n-lib="PT-141">Bremelanotide, a melanocortin agonist studied for central-nervous-system pathways related to arousal, distinct from the vascular mechanism used in other approaches in this research area.</p>
     </div>
 
-    <h2 id="lib-cosmetic" class="section-anchor">Aesthetic &amp; Cosmetic</h2>
+    <h2 id="lib-cosmetic" class="section-anchor" data-i18n-cat="cosmetic">Aesthetic &amp; Cosmetic</h2>
     <div class="glossary-item">
       <span class="g-name">AHK-Cu</span>
-      <p>A copper tripeptide related to GHK-Cu, studied specifically in hair-follicle research.</p>
+      <p data-i18n-lib="AHK-Cu">A copper tripeptide related to GHK-Cu, studied specifically in hair-follicle research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">SNAP-8</span>
-      <p>A topical octapeptide, studied for its effect on the muscle-contraction pathways linked to expression-line formation.</p>
+      <p data-i18n-lib="SNAP-8">A topical octapeptide, studied for its effect on the muscle-contraction pathways linked to expression-line formation.</p>
     </div>
 
-    <h2 id="lib-supplements" class="section-anchor">Supplies &amp; Cofactors</h2>
+    <h2 id="lib-supplements" class="section-anchor" data-i18n-cat="supplements">Supplies &amp; Cofactors</h2>
     <div class="glossary-item">
       <span class="g-name">Acetic Acid</span>
-      <p>A 0.6% sterile diluent used specifically for reconstituting IGF-1-family compounds, which are less stable in bacteriostatic water alone.</p>
+      <p data-i18n-lib="Acetic Acid">A 0.6% sterile diluent used specifically for reconstituting IGF-1-family compounds, which are less stable in bacteriostatic water alone.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Bacteriostatic Water</span>
-      <p>Sterile water containing 0.9% benzyl alcohol as a preservative — the standard diluent for reconstituting most lyophilized research peptides.</p>
+      <p data-i18n-lib="Bacteriostatic Water">Sterile water containing 0.9% benzyl alcohol as a preservative — the standard diluent for reconstituting most lyophilized research peptides.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Glutathione</span>
-      <p>The body's primary intracellular antioxidant, studied here in an injectable research format for redox and detoxification-pathway research.</p>
+      <p data-i18n-lib="Glutathione">The body's primary intracellular antioxidant, studied here in an injectable research format for redox and detoxification-pathway research.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Melatonin</span>
-      <p>The primary circadian-signaling hormone, prepared here as an injectable research-grade vial rather than the oral form more commonly seen.</p>
+      <p data-i18n-lib="Melatonin">The primary circadian-signaling hormone, prepared here as an injectable research-grade vial rather than the oral form more commonly seen.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">NAD Buffer</span>
-      <p>A pH-buffered NAD+ formulation, developed to reduce the injection-site irritation associated with standard NAD+ solutions.</p>
+      <p data-i18n-lib="NAD Buffer">A pH-buffered NAD+ formulation, developed to reduce the injection-site irritation associated with standard NAD+ solutions.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">NAD+</span>
-      <p>A coenzyme central to cellular-energy metabolism across nearly every cell type, and a compound known to decline naturally with age — a major driver of current longevity research interest.</p>
+      <p data-i18n-lib="NAD+">A coenzyme central to cellular-energy metabolism across nearly every cell type, and a compound known to decline naturally with age — a major driver of current longevity research interest.</p>
     </div>
     <div class="glossary-item">
       <span class="g-name">Vitamin B12</span>
-      <p>A methylation cofactor, studied alongside nerve-function and red-blood-cell-production pathways.</p>
+      <p data-i18n-lib="Vitamin B12">A methylation cofactor, studied alongside nerve-function and red-blood-cell-production pathways.</p>
     </div>
 
     <div class="legal-note">
-      <strong>A note on scope</strong>
-      This page is background reference only — what each compound is and the general research area it's studied in. It doesn't cover dosing, administration, or protocols; those are a matter for your own research design and literature review. For reconstitution mechanics, storage, and reading a COA, see the <a href="guide.html" class="inline-link">Reference Guide</a>.
+      <strong data-i18n="library.legalNote.strong">A note on scope</strong>
+      <span data-i18n-html="library.legalNote.body">This page is background reference only — what each compound is and the general research area it's studied in. It doesn't cover dosing, administration, or protocols; those are a matter for your own research design and literature review. For reconstitution mechanics, storage, and reading a COA, see the <a href="guide.html" class="inline-link">Reference Guide</a>.</span>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap foot-simple">
-    <p>© 2026 Goldtide Research. Research use only.</p>
+    <p data-i18n="checkout.footerCopyright">© 2026 Goldtide Research. Research use only.</p>
     <div class="foot-links">
-      <a href="index.html#catalog">Catalog</a>
-      <a href="shop.html">Shop</a>
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="shipping.html">Shipping</a>
-      <a href="mailto:goldtidesresearch@gmail.com">Contact</a>
+      <a href="index.html#catalog" data-i18n="simpleFooter.catalog">Catalog</a>
+      <a href="shop.html" data-i18n="simpleFooter.shop">Shop</a>
+      <a href="terms.html" data-i18n="simpleFooter.terms">Terms</a>
+      <a href="privacy.html" data-i18n="simpleFooter.privacy">Privacy</a>
+      <a href="shipping.html" data-i18n="simpleFooter.shipping">Shipping</a>
+      <a href="mailto:goldtidesresearch@gmail.com" data-i18n="simpleFooter.contact">Contact</a>
     </div>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 </body>
 </html>

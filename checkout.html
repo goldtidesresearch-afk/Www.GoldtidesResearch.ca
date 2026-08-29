@@ -30,6 +30,10 @@
   .brand-name{ font-family:'Cinzel',serif; font-size:0.94rem; font-weight:600; letter-spacing:0.09em; }
   .brand-name em{ font-style:normal; color:var(--gold-bright); }
   .back-link{ font-family:'Oswald',sans-serif; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:9px 16px; transition:all .2s ease; }
+  .lang-switch{ display:flex; border:1px solid var(--line-bright); }
+  .lang-switch button{ font-family:'Oswald', sans-serif; font-size:0.68rem; letter-spacing:0.05em; padding:6px 9px; background:none; border:none; color:var(--muted); cursor:pointer; }
+  .lang-switch button + button{ border-left:1px solid var(--line-bright); }
+  .lang-switch button.active{ background:var(--gold); color:#0a0a0b; }
   .back-link:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
 
   main{ padding:60px 0 120px; }
@@ -130,53 +134,60 @@
       <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
       <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
     </a>
-    <a href="shop.html" class="back-link">← Back to Shop</a>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="fr">FR</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <a href="shop.html" class="back-link" data-i18n="nav.backToShop">← Back to Shop</a>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>Checkout</h1>
-    <p class="sub">Review your order, add your details, and pay by Interac e-Transfer.</p>
+    <h1 data-i18n="checkout.title">Checkout</h1>
+    <p class="sub" data-i18n="checkout.sub">Review your order, add your details, and pay by Interac e-Transfer.</p>
 
     <div class="checkout-grid">
       <div>
-        <h2 class="section-title">Your Order</h2>
+        <h2 class="section-title" data-i18n="checkout.yourOrder">Your Order</h2>
         <div class="review-list" id="reviewList"></div>
 
-        <h2 class="section-title">Contact &amp; Shipping</h2>
+        <h2 class="section-title" data-i18n="checkout.contactShipping">Contact &amp; Shipping</h2>
         <form id="checkoutForm">
           <div class="form-grid">
             <div class="full">
-              <label for="email">Email</label>
+              <label for="email" data-i18n="checkout.email">Email</label>
               <input type="email" id="email" required placeholder="you@example.com">
             </div>
             <div>
-              <label for="fname">First Name</label>
+              <label for="fname" data-i18n="checkout.firstName">First Name</label>
               <input type="text" id="fname" required placeholder="Jane">
             </div>
             <div>
-              <label for="lname">Last Name</label>
+              <label for="lname" data-i18n="checkout.lastName">Last Name</label>
               <input type="text" id="lname" required placeholder="Doe">
             </div>
             <div class="full">
-              <label for="address1">Address</label>
+              <label for="address1" data-i18n="checkout.address">Address</label>
               <input type="text" id="address1" required placeholder="Street address">
             </div>
             <div>
-              <label for="city">City</label>
+              <label for="city" data-i18n="checkout.city">City</label>
               <input type="text" id="city" required placeholder="Toronto">
             </div>
             <div>
-              <label for="province">Province</label>
+              <label for="province" data-i18n="checkout.province">Province</label>
               <input type="text" id="province" required placeholder="ON">
             </div>
             <div>
-              <label for="postal">Postal Code</label>
+              <label for="postal" data-i18n="checkout.postal">Postal Code</label>
               <input type="text" id="postal" required placeholder="M5V 2T6">
             </div>
             <div>
-              <label for="phone">Phone (optional)</label>
+              <label for="phone" data-i18n="checkout.phone">Phone (optional)</label>
               <input type="tel" id="phone" placeholder="For delivery updates">
             </div>
           </div>
@@ -189,26 +200,26 @@
       </div>
 
       <div>
-        <h2 class="section-title">Order Summary</h2>
+        <h2 class="section-title" data-i18n="checkout.orderSummary">Order Summary</h2>
         <div class="summary-box">
-          <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">CA$0</span></div>
-          <div class="summary-row"><span>Shipping</span><span id="sumShipping">CA$0</span></div>
-          <div class="summary-row"><span>Tax (13%)</span><span id="sumTax">CA$0</span></div>
-          <div class="summary-row total"><span>Total</span><span id="sumTotal">CA$0</span></div>
-          <button class="pay-btn" id="payBtn">Place Order — Pay by e-Transfer →</button>
+          <div class="summary-row"><span data-i18n="cart.subtotal">Subtotal</span><span id="sumSubtotal">CA$0</span></div>
+          <div class="summary-row"><span data-i18n="checkout.shipping">Shipping</span><span id="sumShipping">CA$0</span></div>
+          <div class="summary-row"><span data-i18n="checkout.tax">Tax (13%)</span><span id="sumTax">CA$0</span></div>
+          <div class="summary-row total"><span data-i18n="checkout.total">Total</span><span id="sumTotal">CA$0</span></div>
+          <button class="pay-btn" id="payBtn" data-i18n="checkout.placeOrder">Place Order — Pay by e-Transfer →</button>
           <div class="error-box" id="errorBox"></div>
-          <p class="pay-note">Free shipping on orders over CA$150. Payment is by Interac e-Transfer — after placing your order, you'll get the details to send it.</p>
+          <p class="pay-note" data-i18n="checkout.payNote">Free shipping on orders over CA$150. Payment is by Interac e-Transfer — after placing your order, you'll get the details to send it.</p>
         </div>
 
         <div class="etransfer-box" id="etransferBox">
-          <h3>Send Your e-Transfer</h3>
-          <div class="et-row"><span>Send to</span><strong>goldtidesresearch@gmail.com</strong></div>
-          <div class="et-row"><span>Amount</span><strong id="etAmount">CA$0</strong></div>
-          <div class="et-row"><span>Message / Note</span><strong id="etRef">GT-000000</strong></div>
-          <p class="et-note">Include the reference above in the e-Transfer message so we can match it to your order. Autodeposit is enabled, so no security question is needed.</p>
+          <h3 data-i18n="checkout.sendTransfer">Send Your e-Transfer</h3>
+          <div class="et-row"><span data-i18n="checkout.sendTo">Send to</span><strong>goldtidesresearch@gmail.com</strong></div>
+          <div class="et-row"><span data-i18n="checkout.amount">Amount</span><strong id="etAmount">CA$0</strong></div>
+          <div class="et-row"><span data-i18n="checkout.messageNote">Message / Note</span><strong id="etRef">GT-000000</strong></div>
+          <p class="et-note" data-i18n="checkout.etNote1">Include the reference above in the e-Transfer message so we can match it to your order. Autodeposit is enabled, so no security question is needed.</p>
           <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-callback="onTurnstileVerified" data-theme="dark"></div>
-          <button class="pay-btn" id="confirmBtn" disabled>I've Sent My e-Transfer →</button>
-          <p class="et-note">This sends your order details to us by email so we can match your e-Transfer. We'll confirm and ship once it's received.</p>
+          <button class="pay-btn" id="confirmBtn" disabled data-i18n="checkout.confirmBtn">I've Sent My e-Transfer →</button>
+          <p class="et-note" data-i18n="checkout.etNote2">This sends your order details to us by email so we can match your e-Transfer. We'll confirm and ship once it's received.</p>
         </div>
       </div>
     </div>
@@ -217,11 +228,12 @@
 
 <footer>
   <div class="wrap foot-simple">
-    <p>© 2026 Goldtide Research. Research use only.</p>
+    <p data-i18n="checkout.footerCopyright">© 2026 Goldtide Research. Research use only.</p>
     <p><a href="mailto:goldtidesresearch@gmail.com" style="color:var(--muted);">goldtidesresearch@gmail.com</a></p>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 <script>
   const ETRANSFER_EMAIL = 'goldtidesresearch@gmail.com';
 

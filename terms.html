@@ -31,6 +31,10 @@
   .brand-name{ font-family:'Cinzel',serif; font-size:0.94rem; font-weight:600; letter-spacing:0.09em; }
   .brand-name em{ font-style:normal; color:var(--gold-bright); }
   .back-link{ font-family:'Oswald',sans-serif; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:9px 16px; transition:all .2s ease; }
+  .lang-switch{ display:flex; border:1px solid var(--line-bright); }
+  .lang-switch button{ font-family:'Oswald', sans-serif; font-size:0.68rem; letter-spacing:0.05em; padding:6px 9px; background:none; border:none; color:var(--muted); cursor:pointer; }
+  .lang-switch button + button{ border-left:1px solid var(--line-bright); }
+  .lang-switch button.active{ background:var(--gold); color:#0a0a0b; }
   .back-link:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
 
   main{ padding:80px 0 120px; }
@@ -72,71 +76,79 @@
       <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
       <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
     </a>
-    <a href="index.html" class="back-link">← Back to Shop</a>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="fr">FR</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <a href="index.html" class="back-link" data-i18n="nav.backToShop">← Back to Shop</a>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="legal-wrap">
-    <div class="legal-eyebrow"><span class="rule"></span><span class="label">Legal</span></div>
-    <h1>Terms of Service</h1>
-    <p class="updated">Last updated: August 2026</p>
+    <div class="legal-eyebrow"><span class="rule"></span><span class="label" data-i18n="footer.legal">Legal</span></div>
+    <h1 data-i18n="terms.h1">Terms of Service</h1>
+    <p class="updated" data-i18n="terms.updated">Last updated: August 2026</p>
 
-    <p>These Terms of Service ("Terms") govern access to and purchases from goldtideresearch.ca ("Goldtide Research," "we," "us"). By placing an order or browsing this site, you agree to these Terms in full. If you don't agree, please don't use the site.</p>
+    <p data-i18n="terms.intro">These Terms of Service ("Terms") govern access to and purchases from goldtideresearch.ca ("Goldtide Research," "we," "us"). By placing an order or browsing this site, you agree to these Terms in full. If you don't agree, please don't use the site.</p>
 
-    <h2>1. Research Use Only</h2>
-    <p>Every compound sold on this site is intended strictly for laboratory, in-vitro, and other non-clinical research use. Nothing here is a drug, dietary supplement, cosmetic, or medical device, and none of these products is approved for human or veterinary use, consumption, or administration. Nothing on this site constitutes medical advice or a therapeutic claim.</p>
+    <h2 data-i18n="terms.h2.1">1. Research Use Only</h2>
+    <p data-i18n-html="terms.p.1">Every compound sold on this site is intended strictly for laboratory, in-vitro, and other non-clinical research use. Nothing here is a drug, dietary supplement, cosmetic, or medical device, and none of these products is approved for human or veterinary use, consumption, or administration. Nothing on this site constitutes medical advice or a therapeutic claim.</p>
 
-    <h2>2. Eligibility</h2>
-    <p>You must be at least 18 years old and legally able to enter a binding contract to order from this site. By placing an order, you confirm that you meet this requirement and that you are purchasing for legitimate research purposes, in compliance with the laws of your jurisdiction.</p>
+    <h2 data-i18n="terms.h2.2">2. Eligibility</h2>
+    <p data-i18n-html="terms.p.2">You must be at least 18 years old and legally able to enter a binding contract to order from this site. By placing an order, you confirm that you meet this requirement and that you are purchasing for legitimate research purposes, in compliance with the laws of your jurisdiction.</p>
 
-    <h2>3. Product Information</h2>
-    <p>We make reasonable efforts to keep product descriptions, purity data, and pricing accurate and current. Occasional errors may occur; where they do, we'll correct them and, if an order was affected, contact you before fulfilling it.</p>
+    <h2 data-i18n="terms.h2.3">3. Product Information</h2>
+    <p data-i18n-html="terms.p.3">We make reasonable efforts to keep product descriptions, purity data, and pricing accurate and current. Occasional errors may occur; where they do, we'll correct them and, if an order was affected, contact you before fulfilling it.</p>
 
-    <h2>4. Orders &amp; Payment</h2>
-    <p>Placing an order is an offer to purchase, which we may accept or decline at our discretion — for example if a product is out of stock, if we suspect fraudulent activity, or if we're unable to verify eligibility. Prices are listed in Canadian dollars (CAD) and are subject to change without notice; the price charged is the price shown at checkout.</p>
+    <h2 data-i18n="terms.h2.4">4. Orders &amp; Payment</h2>
+    <p data-i18n-html="terms.p.4">Placing an order is an offer to purchase, which we may accept or decline at our discretion — for example if a product is out of stock, if we suspect fraudulent activity, or if we're unable to verify eligibility. Prices are listed in Canadian dollars (CAD) and are subject to change without notice; the price charged is the price shown at checkout.</p>
 
-    <h2>5. Shipping</h2>
-    <p>Shipping timelines, rates, and carrier details are covered in our <a href="shipping.html" class="inline-link">Shipping Policy</a>. Risk of loss passes to you once an order is handed to the carrier; we'll work with you on lost or damaged shipments per that policy.</p>
+    <h2 data-i18n="terms.h2.5">5. Shipping</h2>
+    <p data-i18n-html="terms.p.5">Shipping timelines, rates, and carrier details are covered in our <a href="shipping.html" class="inline-link">Shipping Policy</a>. Risk of loss passes to you once an order is handed to the carrier; we'll work with you on lost or damaged shipments per that policy.</p>
 
-    <h2>6. Returns &amp; Refunds</h2>
-    <p>Because these are research compounds intended for laboratory handling, we're unable to accept returns once a vial has shipped, except where an item arrives damaged, incorrect, or defective. See our <a href="shipping.html" class="inline-link">Shipping Policy</a> for the process.</p>
+    <h2 data-i18n="terms.h2.6">6. Returns &amp; Refunds</h2>
+    <p data-i18n-html="terms.p.6">Because these are research compounds intended for laboratory handling, we're unable to accept returns once a vial has shipped, except where an item arrives damaged, incorrect, or defective. See our <a href="shipping.html" class="inline-link">Shipping Policy</a> for the process.</p>
 
-    <h2>7. Prohibited Use</h2>
-    <p>You agree not to represent, resell, or repackage any product from this site as intended for human or veterinary consumption, and not to use the site for any unlawful purpose. We reserve the right to refuse service to anyone we reasonably believe is violating these Terms.</p>
+    <h2 data-i18n="terms.h2.7">7. Prohibited Use</h2>
+    <p data-i18n-html="terms.p.7">You agree not to represent, resell, or repackage any product from this site as intended for human or veterinary consumption, and not to use the site for any unlawful purpose. We reserve the right to refuse service to anyone we reasonably believe is violating these Terms.</p>
 
-    <h2>8. Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, Goldtide Research is not liable for any indirect, incidental, or consequential damages arising from the purchase, possession, or handling of any product sold on this site. Products are supplied "as is" for research purposes, and it is the purchaser's sole responsibility to handle them safely and lawfully.</p>
+    <h2 data-i18n="terms.h2.8">8. Limitation of Liability</h2>
+    <p data-i18n-html="terms.p.8">To the fullest extent permitted by law, Goldtide Research is not liable for any indirect, incidental, or consequential damages arising from the purchase, possession, or handling of any product sold on this site. Products are supplied "as is" for research purposes, and it is the purchaser's sole responsibility to handle them safely and lawfully.</p>
 
-    <h2>9. Governing Law</h2>
-    <p>These Terms are governed by the laws of Canada and the province in which Goldtide Research operates, without regard to conflict-of-law principles.</p>
+    <h2 data-i18n="terms.h2.9">9. Governing Law</h2>
+    <p data-i18n-html="terms.p.9">These Terms are governed by the laws of Canada and the province in which Goldtide Research operates, without regard to conflict-of-law principles.</p>
 
-    <h2>10. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. Continued use of the site after changes are posted constitutes acceptance of the revised Terms.</p>
+    <h2 data-i18n="terms.h2.10">10. Changes to These Terms</h2>
+    <p data-i18n-html="terms.p.10">We may update these Terms from time to time. Continued use of the site after changes are posted constitutes acceptance of the revised Terms.</p>
 
-    <h2>11. Contact</h2>
-    <p>Questions about these Terms can be sent to <a href="mailto:goldtidesresearch@gmail.com" class="inline-link">goldtidesresearch@gmail.com</a>.</p>
+    <h2 data-i18n="terms.h2.11">11. Contact</h2>
+    <p data-i18n-html="terms.p.11">Questions about these Terms can be sent to <a href="mailto:goldtidesresearch@gmail.com" class="inline-link">goldtidesresearch@gmail.com</a>.</p>
 
     <div class="legal-note">
-      <strong>Research Use Only</strong>
-      All products are sold strictly for laboratory and in-vitro research purposes. Purchasers must be 18 or older and are solely responsible for lawful, compliant handling in their jurisdiction.
+      <strong data-i18n="terms.legalNote.strong">Research Use Only</strong>
+      <span data-i18n="terms.legalNote.body">All products are sold strictly for laboratory and in-vitro research purposes. Purchasers must be 18 or older and are solely responsible for lawful, compliant handling in their jurisdiction.</span>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap foot-simple">
-    <p>© 2026 Goldtide Research. Research use only.</p>
+    <p data-i18n="checkout.footerCopyright">© 2026 Goldtide Research. Research use only.</p>
     <div class="foot-links">
-      <a href="index.html#catalog">Catalog</a>
-      <a href="shop.html">Shop</a>
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="shipping.html">Shipping</a>
-      <a href="mailto:goldtidesresearch@gmail.com">Contact</a>
+      <a href="index.html#catalog" data-i18n="simpleFooter.catalog">Catalog</a>
+      <a href="shop.html" data-i18n="simpleFooter.shop">Shop</a>
+      <a href="terms.html" data-i18n="simpleFooter.terms">Terms</a>
+      <a href="privacy.html" data-i18n="simpleFooter.privacy">Privacy</a>
+      <a href="shipping.html" data-i18n="simpleFooter.shipping">Shipping</a>
+      <a href="mailto:goldtidesresearch@gmail.com" data-i18n="simpleFooter.contact">Contact</a>
     </div>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 </body>
 </html>
