@@ -25,14 +25,23 @@ Everything here can be done from your phone browser — no command-line tools re
 current registrar — but moving the domain gives you Turnstile, the WAF, and DNS all in one
 place, which is what the rest of this guide assumes.)*
 
-## 2. Connect Cloudflare Pages to your GitHub repo
-1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+## 2. Connect Cloudflare to your GitHub repo
+Cloudflare's dashboard has moved to a unified "Workers & Pages" flow — when you connect a Git
+repo now, it creates a **Worker with static assets** rather than a classic "Pages" project.
+That's what this repo is now set up for (via `wrangler.jsonc` and `src/index.js`), so just:
+
+1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Connect to Git**
 2. Authorize GitHub, pick your `GoldtidesResearch.ca` repo
-3. Build settings: leave **Framework preset** as "None," **Build command** blank, **Build
-   output directory** as `/` (root) — it's all static files, nothing to build
+3. It should auto-detect the config from `wrangler.jsonc` in the repo — if it asks for a build
+   command, leave it **blank**; deploy command should end up being `npx wrangler deploy`
 4. **Save and Deploy**
-5. Once deployed, go to **Custom Domains** on the Pages project → add `goldtidesresearch.ca`
-   and `www.goldtidesresearch.ca`
+5. Once deployed, look for a domains/routes section on the project (naming may say "Custom
+   Domains" or "Domains & Routes" depending on your dashboard version) → add
+   `goldtidesresearch.ca` and `www.goldtidesresearch.ca`
+
+If your project already exists from an earlier attempt and failed to build, you don't need to
+recreate it — just re-upload these files to the same GitHub repo and use **Retry build** (or
+it may redeploy automatically on the new commit).
 
 ## 3. Resend (order emails)
 1. Create a free account at **resend.com** (3,000 emails/month free)
@@ -42,7 +51,7 @@ place, which is what the rest of this guide assumes.)*
    your domain → **DNS** → **Add Record**
 5. Back in Resend, click **Verify** once the records are added (may take a few minutes)
 6. **API Keys** → **Create API Key** → give it "Sending access" → copy the key
-7. In Cloudflare → your Pages project → **Settings → Environment Variables** → add a
+7. In Cloudflare → your project → **Settings** (look for **Variables and Secrets**, Cloudflare has renamed this a couple of times) → add a
    **secret** (not a plain variable) named `RESEND_API_KEY` with that value
 
 ## 4. Turnstile (bot protection)
@@ -53,7 +62,7 @@ place, which is what the rest of this guide assumes.)*
    ```html
    <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" ...>
    ```
-5. **Secret Key**: Cloudflare → your Pages project → **Settings → Environment Variables** →
+5. **Secret Key**: Cloudflare → your project → **Settings** → **Variables and Secrets** →
    add a secret named `TURNSTILE_SECRET_KEY` with that value
 
 ## 5. Rate limiting (optional but recommended)
