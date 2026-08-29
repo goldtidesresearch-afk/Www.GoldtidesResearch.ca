@@ -1,0 +1,1 @@
+# Www.GoldtidesResearch.ca
