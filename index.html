@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop All Compounds — Goldtide Research</title>
+<title>Goldtide Research — Precision. Purity. Performance.</title>
 <link rel="icon" type="image/png" href="assets/goldtide-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -958,6 +958,7 @@
     .faq-q{ padding-right:56px; }
   }
 </style>
+</head>
 <body>
 
 <!-- ============ background hex field ============ -->
@@ -980,31 +981,33 @@
 <!-- ============ header ============ -->
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="brand">
+    <div class="brand">
       <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
       <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
-    </a>
+    </div>
     <nav class="links">
+      <a href="shop.html">Shop</a>
       <a href="#catalog">Catalog</a>
       <a href="#stacks">Stacks</a>
-      <a href="index.html#purity">Purity</a>
-      <a href="index.html#about">About</a>
+      <a href="#purity">Purity</a>
+      <a href="#about">About</a>
     </nav>
     <div style="display:flex; align-items:center; gap:20px;">
       <button class="cart-link" id="cartLink">
         <svg viewBox="0 0 24 24" fill="none" stroke="#948c7c" stroke-width="1.4"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         Cart <span class="cart-count" id="cartCount">0</span>
       </button>
-      <a href="#stacks" class="btn solid" id="shopBtnDesktop">Common Stacks</a>
+      <a href="shop.html" class="btn solid" id="shopBtnDesktop">Shop the Catalog</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
+    <a href="shop.html">Shop</a>
     <a href="#catalog">Catalog</a>
     <a href="#stacks">Stacks</a>
-    <a href="index.html#purity">Purity</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#faq">FAQ</a>
+    <a href="#purity">Purity</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
   </div>
 </header>
 
@@ -1025,11 +1028,38 @@
   </div>
 </aside>
 
+<!-- ============ hero ============ -->
+<section class="hero">
+  <div class="seal-wrap" aria-hidden="true">
+    <img src="assets/goldtide-logo.png" alt="">
+  </div>
+
+  <div class="wrap">
+    <div class="hero-eyebrow">
+      <span class="rule"></span>
+      <span class="label">Precision · Purity · Performance</span>
+    </div>
+    <h1 class="hero-title">Research-grade compounds, <i>poured with precision.</i></h1>
+    <p class="hero-sub">Goldtide Research supplies HPLC-verified compounds for laboratory and in-vitro research, with a batch record behind every vial. Shipped from Canada, priced in CAD. Strictly for research use — not for human or veterinary consumption.</p>
+    <div class="hero-cta">
+      <a href="#catalog" class="btn solid">Browse the Catalog</a>
+      <a href="#purity" class="btn">View the COA Library</a>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><div class="num">40</div><div class="cap">Compounds In Stock</div></div>
+      <div class="stat"><div class="num">≥99%</div><div class="cap">HPLC-Verified Purity</div></div>
+      <div class="stat"><div class="num">RUO</div><div class="cap">Research Use Only</div></div>
+      <div class="stat"><div class="num">CA</div><div class="cap">Shipped From Canada</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ catalog ============ -->
 <section class="catalog wrap" id="catalog">
   <div class="section-head reveal">
     <div>
-      <span class="label">Shop All Compounds</span>
+      <span class="label">The Catalog</span>
       <h2>40 compounds. Nine categories. One purity standard.</h2>
     </div>
     <p>Every compound below is HPLC-tested to ≥99% and shipped lyophilized to hold potency. Research use only.</p>
@@ -1091,6 +1121,93 @@
   </div>
 </section>
 
+<!-- ============ guide callout ============ -->
+<section class="guide-band wrap">
+  <div class="guide-inner reveal">
+    <div>
+      <span class="label">New To Research Peptides?</span>
+      <h3>The Goldtide Reference Guide</h3>
+      <p>How to read a COA, reconstitution and storage basics, and a plain-language glossary of everything we carry — free, on-page.</p>
+    </div>
+    <a href="guide.html" class="btn solid">Read the Guide →</a>
+  </div>
+</section>
+
+<!-- ============ purity ============ -->
+<section class="purity" id="purity">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="label">How We Verify</span>
+        <h2>Every vial answers to a batch record.</h2>
+      </div>
+      <p>The standard we hold every compound to before it ships.</p>
+    </div>
+
+    <div class="purity-grid">
+      <div class="purity-item reveal">
+        <svg class="mark" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="21" stroke="#c9a227" stroke-width="1.2"/><path d="M14 24l6 6 12-14" stroke="#e8c468" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h4>HPLC-Verified</h4>
+        <p>Every batch is run against a high-performance liquid chromatography standard before it's listed.</p>
+      </div>
+      <div class="purity-item reveal">
+        <svg class="mark" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="21" stroke="#c9a227" stroke-width="1.2"/><polygon points="23,12 30,17 30,28 23,33 16,28 16,17" fill="none" stroke="#e8c468" stroke-width="1.2"/></svg>
+        <h4>Third-Party Tested</h4>
+        <p>Independent lab analysis backs every purity claim we publish — nothing is graded in-house alone.</p>
+      </div>
+      <div class="purity-item reveal">
+        <svg class="mark" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="21" stroke="#c9a227" stroke-width="1.2"/><path d="M16 15h14v16l-7 4-7-4z" fill="none" stroke="#e8c468" stroke-width="1.2"/></svg>
+        <h4>COA On File</h4>
+        <p>A certificate of analysis is kept for every batch and made available on request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ manifesto / about ============ -->
+<section class="manifesto wrap" id="about">
+  <div class="rule-full reveal"></div>
+  <blockquote class="reveal">
+    Goldtide Research was built on a simple premise: researchers deserve a supplier that treats purity as non-negotiable, documentation as standard, and every vial as a promise kept — batch after batch.
+  </blockquote>
+  <div class="motto reveal">Science <span>·</span> Quality <span>·</span> Integrity</div>
+</section>
+
+<!-- ============ cta band ============ -->
+<section class="cta-band wrap" id="contact">
+  <h2 class="reveal">Ready to see the full catalog?</h2>
+  <a href="#catalog" class="btn solid reveal">Browse All Compounds →</a>
+</section>
+
+<!-- ============ faq ============ -->
+<section class="faq-block wrap" id="faq">
+  <div class="section-head reveal">
+    <div>
+      <span class="label">Common Questions</span>
+      <h2>Before you order</h2>
+    </div>
+    <p>A few things researchers usually ask before their first order.</p>
+  </div>
+  <div class="faq-list reveal" id="faqList">
+    <div class="faq-item">
+      <button class="faq-q"><span>How do I get a certificate of analysis?</span><span class="plus">+</span></button>
+      <div class="faq-a"><p>Every batch we carry has a corresponding COA on file. Request the one for your order from the contact link in the footer and we'll send it over.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>How are compounds shipped and stored?</span><span class="plus">+</span></button>
+      <div class="faq-a"><p>Everything ships lyophilized in plain, tracked packaging. Once received, store vials as noted on the product label, and refer to your COA for batch-specific handling notes.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>Who can order from Goldtide Research?</span><span class="plus">+</span></button>
+      <div class="faq-a"><p>Every product on this site is sold for laboratory and in-vitro research use only. Purchasers must be 18 or older and are responsible for lawful, compliant handling in their jurisdiction.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>Can I order a custom stack?</span><span class="plus">+</span></button>
+      <div class="faq-a"><p>Yes — the stacks above are starting points. Add any combination of compounds to your cart and check out as a single order.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ footer ============ -->
 <footer>
   <div class="wrap">
@@ -1105,6 +1222,7 @@
 
       <div class="foot-col">
         <span class="label">Catalog</span>
+        <a href="shop.html">Shop All Compounds</a>
         <a href="#cat-weight">Fat Loss &amp; Metabolic</a>
         <a href="#cat-blends">Blends &amp; Protocols</a>
         <a href="#cat-repair">Repair &amp; Recovery</a>
@@ -1118,11 +1236,11 @@
 
       <div class="foot-col">
         <span class="label">Info</span>
-        <a href="index.html#purity">Purity &amp; Testing</a>
+        <a href="#purity">Purity &amp; Testing</a>
         <a href="#stacks">Common Stacks</a>
         <a href="#supplies">Injection Supplies</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#about">About</a>
         <a href="guide.html">Reference Guide</a>
               <a href="library.html">Peptide Library</a>
         <a href="mailto:goldtidesresearch@gmail.com">Contact</a>
@@ -1477,25 +1595,22 @@
 
   renderCart();
 
-  // ---------- FAQ accordion (present on the homepage only) ----------
-  const faqListEl = document.getElementById('faqList');
-  if (faqListEl){
-    faqListEl.addEventListener('click', (e) => {
-      const q = e.target.closest('.faq-q');
-      if (!q) return;
-      const item = q.closest('.faq-item');
-      const answer = item.querySelector('.faq-a');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(el => {
-        el.classList.remove('open');
-        el.querySelector('.faq-a').style.maxHeight = null;
-      });
-      if (!isOpen){
-        item.classList.add('open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-      }
+  // ---------- FAQ accordion ----------
+  document.getElementById('faqList').addEventListener('click', (e) => {
+    const q = e.target.closest('.faq-q');
+    if (!q) return;
+    const item = q.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-a').style.maxHeight = null;
     });
-  }
+    if (!isOpen){
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
 
   // ---------- reveal on scroll: attach observer to everything else ----------
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
