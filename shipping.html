@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipping & Returns — Goldtide Research</title>
+<link rel="icon" type="image/png" href="assets/goldtide-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0a0a0b; --surface:#141416; --surface-2:#19191b;
+    --line: rgba(201,162,39,0.22); --line-bright: rgba(201,162,39,0.45);
+    --gold:#c9a227; --gold-bright:#e8c468; --gold-dim:#7a6526;
+    --bone:#ede6d6; --muted:#948c7c; --muted-2:#5c574c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--void); color:var(--bone); font-family:'Inter',sans-serif; font-size:16px; line-height:1.65; }
+  ::selection{ background:var(--gold); color:#0a0a0b; }
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; max-width:100%; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 40px; }
+  .label{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:0.72rem; font-weight:500; color:var(--gold); }
+
+  header{ position:sticky; top:0; z-index:100; background:rgba(10,10,11,0.85); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ width:38px; height:38px; border-radius:50%; }
+  .brand-name{ font-family:'Cinzel',serif; font-size:0.94rem; font-weight:600; letter-spacing:0.09em; }
+  .brand-name em{ font-style:normal; color:var(--gold-bright); }
+  .back-link{ font-family:'Oswald',sans-serif; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:9px 16px; transition:all .2s ease; }
+  .back-link:hover{ color:var(--gold-bright); border-color:var(--line-bright); }
+
+  main{ padding:80px 0 120px; }
+  .legal-wrap{ max-width:760px; margin:0 auto; padding:0 40px; }
+  .legal-eyebrow{ display:flex; align-items:center; gap:16px; margin-bottom:20px; }
+  .legal-eyebrow .rule{ width:44px; height:1px; background:var(--gold); }
+  h1{ font-family:'Fraunces',serif; font-weight:500; font-size:clamp(2rem, 4vw, 2.8rem); line-height:1.1; margin-bottom:14px; }
+  .updated{ color:var(--muted-2); font-size:0.82rem; font-style:italic; margin-bottom:50px; }
+  h2{ font-family:'Fraunces',serif; font-weight:500; font-size:1.3rem; color:var(--gold-bright); margin:44px 0 14px; }
+  h2:first-of-type{ margin-top:0; }
+  p{ color:var(--muted); margin-bottom:14px; max-width:640px; }
+  ul, ol{ color:var(--muted); margin:0 0 14px 22px; max-width:620px; }
+  li{ margin-bottom:8px; }
+  strong{ color:var(--bone); font-weight:500; }
+  a.inline-link{ color:var(--gold-bright); border-bottom:1px solid var(--gold-dim); }
+  a.inline-link:hover{ border-color:var(--gold-bright); }
+  .legal-note{ margin-top:60px; padding:22px 24px; border:1px solid var(--line); background:var(--surface); font-size:0.86rem; color:var(--muted); }
+  .legal-note strong{ display:block; color:var(--gold-bright); font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
+
+  footer{ border-top:1px solid var(--line); padding:50px 0 30px; }
+  .foot-simple{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px; }
+  .foot-simple p{ color:var(--muted-2); font-size:0.82rem; margin:0; }
+  .foot-links{ display:flex; flex-wrap:wrap; gap:22px; }
+  .foot-links a{ font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); transition:color .2s ease; }
+  .foot-links a:hover{ color:var(--gold-bright); }
+
+  @media (max-width:640px){
+    .legal-wrap{ padding:0 24px; }
+    .wrap{ padding:0 24px; }
+    main{ padding:50px 0 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <img src="assets/goldtide-logo.png" alt="Goldtide Research seal">
+      <span class="brand-name">GOLDTIDE <em>RESEARCH</em></span>
+    </a>
+    <a href="index.html" class="back-link">← Back to Shop</a>
+  </div>
+</header>
+
+<main>
+  <div class="legal-wrap">
+    <div class="legal-eyebrow"><span class="rule"></span><span class="label">Legal</span></div>
+    <h1>Shipping &amp; Returns</h1>
+    <p class="updated">Last updated: August 2026</p>
+
+    <h2>Processing Time</h2>
+    <p>Orders are processed within 1–2 business days of payment confirmation. You'll receive a tracking number by email as soon as your order ships.</p>
+
+    <h2>Shipping Rates &amp; Delivery</h2>
+    <ul>
+      <li><strong>Flat rate:</strong> CA$20 on all orders.</li>
+      <li><strong>Free shipping</strong> automatically applied on orders over CA$150.</li>
+      <li><strong>Delivery window:</strong> typically 7 business days from dispatch, Canada-wide.</li>
+      <li><strong>Local pickup</strong> is available — select it at checkout for pickup details.</li>
+    </ul>
+
+    <h2>Taxes</h2>
+    <p>Applicable sales tax (13%) is added at checkout. No tax is charged on orders paid by cash.</p>
+
+    <h2>Order Tracking</h2>
+    <p>Tracking is provided for every shipment. If your tracking hasn't updated in more than 3 business days, contact us and we'll follow up with the carrier on your behalf.</p>
+
+    <h2>Lost or Damaged Shipments</h2>
+    <p>If a package is lost in transit or arrives visibly damaged, contact us within 7 days of the expected delivery date with your order number and, if applicable, photos of the damage. We'll arrange a reshipment or refund once the issue is confirmed.</p>
+
+    <h2>Returns &amp; Refunds</h2>
+    <p>Because our products are research compounds intended for laboratory handling, we're not able to accept returns once an order has shipped, except in the following cases:</p>
+    <ul>
+      <li>The item received doesn't match what was ordered.</li>
+      <li>The item arrived damaged or defective.</li>
+    </ul>
+    <p>In either case, contact us within 7 days of delivery with your order number and a description (and photos, where relevant) of the issue, and we'll arrange a replacement or refund.</p>
+
+    <h2>Contact</h2>
+    <p>For any shipping or order question, reach us at <a href="mailto:goldtidesresearch@gmail.com" class="inline-link">goldtidesresearch@gmail.com</a>.</p>
+
+    <div class="legal-note">
+      <strong>Research Use Only</strong>
+      All products are sold strictly for laboratory and in-vitro research purposes. Purchasers must be 18 or older and are solely responsible for lawful, compliant handling in their jurisdiction.
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-simple">
+    <p>© 2026 Goldtide Research. Research use only.</p>
+    <div class="foot-links">
+      <a href="index.html#catalog">Catalog</a>
+      <a href="shop.html">Shop</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="shipping.html">Shipping</a>
+      <a href="mailto:goldtidesresearch@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
