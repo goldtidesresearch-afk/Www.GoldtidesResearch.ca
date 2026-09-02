@@ -116,6 +116,10 @@
       fr: "Un protocole combiné GHRH/GHRP étudié pour la libération pulsatile de GH.",
       es: "Un protocolo combinado GHRH/GHRP estudiado para la liberación pulsátil de GH.",
     },
+    "CJC-1295 (No DAC)": {
+      fr: "Un analogue GHRH étudié sans la modification DAC, examiné pour son profil de libération pulsatile à action plus courte.",
+      es: "Un análogo de GHRH estudiado sin la modificación DAC, examinado por su perfil de liberación pulsátil de acción más corta.",
+    },
     "Ipamorelin": {
       fr: "Un GHRP sélectif étudié pour la libération de GH sans élévation du cortisol ni de la prolactine.",
       es: "Un GHRP selectivo estudiado por la liberación de GH sin elevación de cortisol o prolactina.",
@@ -572,7 +576,7 @@
       "coa.result.downloadPdf": "Download Full COA (PDF)",
       "coa.result.purity": "Purity", "coa.result.testDate": "Test Date", "coa.result.lab": "Testing Lab", "coa.result.status": "Status",
       "coa.result.statusPass": "Pass", "coa.result.statusFail": "Fail",
-      "badge.popular": "Popular", "badge.perVial": "per vial", "badge.add": "Add", "badge.compound": "compound", "badge.compounds": "compounds", "badge.vials": "vials", "badge.addStack": "Add stack", "badge.added": "Added",
+      "badge.popular": "Popular", "badge.perVial": "per vial", "badge.add": "Add", "badge.compound": "compound", "badge.compounds": "compounds", "badge.vials": "vials", "badge.addStack": "Add stack", "badge.added": "Added", "badge.soldOut": "Sold Out",
     },
     fr: {
       "nav.shop": "Boutique", "nav.catalog": "Catalogue", "nav.stacks": "Combinaisons", "nav.purity": "Pureté", "nav.about": "À propos", "nav.faq": "FAQ", "nav.cart": "Panier",
@@ -763,7 +767,7 @@
       "coa.result.downloadPdf": "Télécharger le COA complet (PDF)",
       "coa.result.purity": "Pureté", "coa.result.testDate": "Date du test", "coa.result.lab": "Laboratoire d'analyse", "coa.result.status": "Statut",
       "coa.result.statusPass": "Conforme", "coa.result.statusFail": "Non conforme",
-      "badge.popular": "Populaire", "badge.perVial": "par flacon", "badge.add": "Ajouter", "badge.compound": "composé", "badge.compounds": "composés", "badge.vials": "flacons", "badge.addStack": "Ajouter le pack", "badge.added": "Ajouté",
+      "badge.popular": "Populaire", "badge.perVial": "par flacon", "badge.add": "Ajouter", "badge.compound": "composé", "badge.compounds": "composés", "badge.vials": "flacons", "badge.addStack": "Ajouter le pack", "badge.added": "Ajouté", "badge.soldOut": "Épuisé",
     },
     es: {
       "nav.shop": "Tienda", "nav.catalog": "Catálogo", "nav.stacks": "Combinaciones", "nav.purity": "Pureza", "nav.about": "Acerca de", "nav.faq": "Preguntas", "nav.cart": "Carrito",
@@ -954,7 +958,7 @@
       "coa.result.downloadPdf": "Descargar COA Completo (PDF)",
       "coa.result.purity": "Pureza", "coa.result.testDate": "Fecha de Prueba", "coa.result.lab": "Laboratorio de Pruebas", "coa.result.status": "Estado",
       "coa.result.statusPass": "Aprobado", "coa.result.statusFail": "No Aprobado",
-      "badge.popular": "Popular", "badge.perVial": "por vial", "badge.add": "Añadir", "badge.compound": "compuesto", "badge.compounds": "compuestos", "badge.vials": "viales", "badge.addStack": "Añadir el pack", "badge.added": "Añadido",
+      "badge.popular": "Popular", "badge.perVial": "por vial", "badge.add": "Añadir", "badge.compound": "compuesto", "badge.compounds": "compuestos", "badge.vials": "viales", "badge.addStack": "Añadir el pack", "badge.added": "Añadido", "badge.soldOut": "Agotado",
     },
   };
 
