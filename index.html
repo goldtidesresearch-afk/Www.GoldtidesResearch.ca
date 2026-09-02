@@ -471,6 +471,32 @@
   .p-visual svg{ width:44%; height:44%; opacity:0.9; }
   .p-visual .vial-svg{ width:76%; height:76%; opacity:1; transition:transform .4s ease; }
   .product-card:hover .p-visual .vial-svg{ transform:scale(1.04) translateY(-2px); }
+
+  .product-card.is-sold-out .p-visual .vial-svg,
+  .product-card.is-sold-out .p-visual img{ opacity:0.35; filter:grayscale(0.6); }
+  .product-card.is-sold-out h4,
+  .product-card.is-sold-out .p-blurb{ opacity:0.55; }
+  .p-soldout-stamp{
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%, -50%) rotate(-8deg);
+    font-family:'Oswald', sans-serif;
+    font-size:0.92rem;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#f2ece0;
+    border:2px solid #f2ece0;
+    padding:7px 16px;
+    background:rgba(10,10,11,0.72);
+    white-space:nowrap;
+    z-index:2;
+  }
+  .p-add:disabled, .add-stack:disabled{
+    opacity:0.4; cursor:not-allowed;
+    background:none; color:var(--muted); border-color:var(--line);
+  }
+  .p-add:disabled:hover, .add-stack:disabled:hover{ background:none; color:var(--muted); border-color:var(--line); }
+  .stack-card.is-sold-out{ opacity:0.6; }
   .vial-name{
     width:100%; height:100%;
     display:-webkit-box;
@@ -1313,54 +1339,55 @@
   // cross-referenced against purepeptide.co and peptidewarehouse.ca (CAD) for
   // everything else, with remaining unmatched items kept at a reasonable estimate.
   const products = [
-    { n:"5-Amino-1MQ", cat:"weight", sizes:[{d:"50 mg",p:90},{d:"100 mg",p:160}], b:"An NNMT-pathway compound studied in fat-cell metabolism models." },
-    { n:"AOD-9604", cat:"weight", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A modified growth-hormone fragment studied apart from the broader GH cascade." },
-    { n:"Cagrilintide", cat:"weight", sizes:[{d:"10 mg",p:100}], b:"An amylin-analog compound studied alongside GLP-1 pathways for satiety research." },
-    { n:"MOTS-c", cat:"weight", pop:true, sizes:[{d:"20 mg",p:65},{d:"40 mg",p:115}], b:"A mitochondrial-derived peptide studied for AMPK activation." },
+    { n:"5-Amino-1MQ", cat:"weight", sizes:[{d:"50 mg",p:90},{d:"100 mg",p:160}], b:"An NNMT-pathway compound studied in fat-cell metabolism models.", stock:false },
+    { n:"AOD-9604", cat:"weight", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A modified growth-hormone fragment studied apart from the broader GH cascade.", stock:false },
+    { n:"Cagrilintide", cat:"weight", sizes:[{d:"10 mg",p:100}], b:"An amylin-analog compound studied alongside GLP-1 pathways for satiety research.", stock:false },
+    { n:"MOTS-c", cat:"weight", pop:true, sizes:[{d:"20 mg",p:65},{d:"40 mg",p:115}], b:"A mitochondrial-derived peptide studied for AMPK activation.", stock:false },
     { n:"Retatrutide", cat:"weight", pop:true, sizes:[{d:"10 mg",p:80},{d:"20 mg",p:140},{d:"60 mg",p:320}], b:"A triple-agonist compound studied extensively in weight research." },
-    { n:"SS-31", cat:"weight", sizes:[{d:"50 mg",p:140},{d:"100 mg",p:245}], b:"A mitochondria-targeted compound studied in oxidative-stress models." },
+    { n:"SS-31", cat:"weight", sizes:[{d:"50 mg",p:140},{d:"100 mg",p:245}], b:"A mitochondria-targeted compound studied in oxidative-stress models.", stock:false },
 
-    { n:"GLOW", cat:"blends", sizes:[{d:"70 mg",p:120}], b:"A three-compound blend studied across skin, hair and tissue-repair models." },
-    { n:"HHB", cat:"blends", sizes:[{d:"10 ml",p:45}], b:"A nine-part B-vitamin and choline blend built for cofactor research." },
-    { n:"KLOW", cat:"blends", pop:true, sizes:[{d:"80 mg",p:140}], b:"A four-compound blend studied in gut, joint and skin inflammation models." },
-    { n:"Semax + Selank Blend", cat:"blends", sizes:[{d:"20 mg",p:120}], b:"A combined blend pairing two Russian-studied neuropeptides." },
-    { n:"SHB", cat:"blends", sizes:[{d:"10 ml",p:55}], b:"A nine-part amino-acid and NAC blend for combined-pathway research." },
-    { n:"Wolverine (BPC-157 + TB-500)", cat:"blends", sizes:[{d:"20 mg",p:120}], b:"A pre-combined vial of two of the most studied repair peptides." },
+    { n:"GLOW", cat:"blends", sizes:[{d:"70 mg",p:120}], b:"A three-compound blend studied across skin, hair and tissue-repair models.", stock:false },
+    { n:"HHB", cat:"blends", sizes:[{d:"10 ml",p:45}], b:"A nine-part B-vitamin and choline blend built for cofactor research.", stock:false },
+    { n:"KLOW", cat:"blends", pop:true, sizes:[{d:"80 mg",p:140}], b:"A four-compound blend studied in gut, joint and skin inflammation models.", stock:false },
+    { n:"Semax + Selank Blend", cat:"blends", sizes:[{d:"20 mg",p:120}], b:"A combined blend pairing two Russian-studied neuropeptides.", stock:false },
+    { n:"SHB", cat:"blends", sizes:[{d:"10 ml",p:55}], b:"A nine-part amino-acid and NAC blend for combined-pathway research.", stock:false },
+    { n:"Wolverine (BPC-157 + TB-500)", cat:"blends", sizes:[{d:"20 mg",p:120}], b:"A pre-combined vial of two of the most studied repair peptides.", stock:false },
 
-    { n:"BPC-157", cat:"repair", pop:true, sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"One of the most studied repair peptides, examined for angiogenesis and tendon signaling." },
+    { n:"BPC-157", cat:"repair", pop:true, sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"One of the most studied repair peptides, examined for angiogenesis and tendon signaling.", stock:false },
     { n:"GHK-Cu", cat:"repair", sizes:[{d:"50 mg",p:50},{d:"100 mg",p:80}], b:"A copper tripeptide studied for its role in activating repair-related gene expression." },
-    { n:"KPV", cat:"repair", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A tripeptide fragment studied for anti-inflammatory signaling." },
-    { n:"TB-500", cat:"repair", pop:true, sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"A synthetic fragment studied for whole-body repair and vascular signaling." },
+    { n:"KPV", cat:"repair", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A tripeptide fragment studied for anti-inflammatory signaling.", stock:false },
+    { n:"TB-500", cat:"repair", pop:true, sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"A synthetic fragment studied for whole-body repair and vascular signaling.", stock:false },
 
-    { n:"CJC-1295 (No DAC) + Ipamorelin", cat:"gh", pop:true, sizes:[{d:"20 mg (10+10)",p:80}], b:"A combined GHRH/GHRP protocol studied for pulsatile GH release." },
-    { n:"Ipamorelin", cat:"gh", sizes:[{d:"10 mg",p:60},{d:"20 mg",p:105}], b:"A selective GHRP studied for GH release without cortisol or prolactin elevation." },
-    { n:"Sermorelin", cat:"gh", sizes:[{d:"10 mg",p:69},{d:"20 mg",p:120}], b:"The original GHRH-analog compound, studied since its early clinical use." },
+    { n:"CJC-1295 (No DAC) + Ipamorelin", cat:"gh", pop:true, sizes:[{d:"20 mg (10+10)",p:80}], b:"A combined GHRH/GHRP protocol studied for pulsatile GH release.", stock:false },
+    { n:"CJC-1295 (No DAC)", cat:"gh", sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"A GHRH analog studied without the DAC modification, examined for its shorter-acting pulsatile release profile." },
+    { n:"Ipamorelin", cat:"gh", sizes:[{d:"10 mg",p:60},{d:"20 mg",p:105}], b:"A selective GHRP studied for GH release without cortisol or prolactin elevation.", stock:false },
+    { n:"Sermorelin", cat:"gh", sizes:[{d:"10 mg",p:69},{d:"20 mg",p:120}], b:"The original GHRH-analog compound, studied since its early clinical use.", stock:false },
     { n:"Tesamorelin", cat:"gh", pop:true, sizes:[{d:"10 mg",p:100},{d:"20 mg",p:120}], b:"A GHRH analog studied specifically in visceral-fat research." },
 
-    { n:"DSIP", cat:"cognitive", sizes:[{d:"10 mg",p:55},{d:"20 mg",p:95}], b:"A peptide studied for its influence on slow-wave sleep architecture." },
-    { n:"Selank", cat:"cognitive", sizes:[{d:"10 mg",p:70},{d:"20 mg",p:125}], b:"A Russian-studied anxiolytic peptide examined for calming effects without sedation." },
-    { n:"Semax", cat:"cognitive", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A neuropeptide studied for focus, memory and neuroprotective pathways." },
+    { n:"DSIP", cat:"cognitive", sizes:[{d:"10 mg",p:55},{d:"20 mg",p:95}], b:"A peptide studied for its influence on slow-wave sleep architecture.", stock:false },
+    { n:"Selank", cat:"cognitive", sizes:[{d:"10 mg",p:70},{d:"20 mg",p:125}], b:"A Russian-studied anxiolytic peptide examined for calming effects without sedation.", stock:false },
+    { n:"Semax", cat:"cognitive", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A neuropeptide studied for focus, memory and neuroprotective pathways.", stock:false },
 
-    { n:"Epithalon", cat:"longevity", pop:true, sizes:[{d:"50 mg",p:40},{d:"100 mg",p:70}], b:"A telomerase-related bioregulator, among the most studied longevity peptides." },
-    { n:"Pinealon", cat:"longevity", sizes:[{d:"10 mg",p:55},{d:"20 mg",p:95}], b:"A short tripeptide studied in brain-targeted aging research." },
-    { n:"Thymosin Alpha-1", cat:"longevity", sizes:[{d:"10 mg",p:70},{d:"20 mg",p:125}], b:"An immune-regulating peptide studied and approved under other names in dozens of countries." },
+    { n:"Epithalon", cat:"longevity", pop:true, sizes:[{d:"50 mg",p:40},{d:"100 mg",p:70}], b:"A telomerase-related bioregulator, among the most studied longevity peptides.", stock:false },
+    { n:"Pinealon", cat:"longevity", sizes:[{d:"10 mg",p:55},{d:"20 mg",p:95}], b:"A short tripeptide studied in brain-targeted aging research.", stock:false },
+    { n:"Thymosin Alpha-1", cat:"longevity", sizes:[{d:"10 mg",p:70},{d:"20 mg",p:125}], b:"An immune-regulating peptide studied and approved under other names in dozens of countries.", stock:false },
 
-    { n:"HCG", cat:"hormonal", sizes:[{d:"10,000 IU",p:55}], b:"An LH-mimetic compound studied in testosterone-pathway research." },
-    { n:"Kisspeptin-10", cat:"hormonal", sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"A compound studied for its role activating the body's own LH/FSH cascade." },
-    { n:"Melanotan I", cat:"hormonal", sizes:[{d:"10 mg",p:60},{d:"20 mg",p:105}], b:"A selective melanocortin agonist studied in pigmentation research." },
-    { n:"Melanotan II", cat:"hormonal", sizes:[{d:"10 mg",p:55},{d:"20 mg",p:95}], b:"A broader melanocortin agonist, and the parent compound of PT-141." },
-    { n:"PT-141", cat:"hormonal", pop:true, sizes:[{d:"10 mg",p:70},{d:"20 mg",p:125}], b:"A melanocortin agonist studied for central-nervous-system arousal pathways." },
+    { n:"HCG", cat:"hormonal", sizes:[{d:"10,000 IU",p:55}], b:"An LH-mimetic compound studied in testosterone-pathway research.", stock:false },
+    { n:"Kisspeptin-10", cat:"hormonal", sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"A compound studied for its role activating the body's own LH/FSH cascade.", stock:false },
+    { n:"Melanotan I", cat:"hormonal", sizes:[{d:"10 mg",p:60},{d:"20 mg",p:105}], b:"A selective melanocortin agonist studied in pigmentation research.", stock:false },
+    { n:"Melanotan II", cat:"hormonal", sizes:[{d:"10 mg",p:55},{d:"20 mg",p:95}], b:"A broader melanocortin agonist, and the parent compound of PT-141.", stock:false },
+    { n:"PT-141", cat:"hormonal", pop:true, sizes:[{d:"10 mg",p:70},{d:"20 mg",p:125}], b:"A melanocortin agonist studied for central-nervous-system arousal pathways.", stock:false },
 
-    { n:"AHK-Cu", cat:"cosmetic", sizes:[{d:"100 mg",p:52},{d:"200 mg",p:90}], b:"A copper peptide studied in hair-follicle research." },
-    { n:"SNAP-8", cat:"cosmetic", sizes:[{d:"10 mg",p:34},{d:"20 mg",p:60}], b:"A topical octapeptide studied for its effect on expression-line formation." },
+    { n:"AHK-Cu", cat:"cosmetic", sizes:[{d:"100 mg",p:52},{d:"200 mg",p:90}], b:"A copper peptide studied in hair-follicle research.", stock:false },
+    { n:"SNAP-8", cat:"cosmetic", sizes:[{d:"10 mg",p:34},{d:"20 mg",p:60}], b:"A topical octapeptide studied for its effect on expression-line formation.", stock:false },
 
-    { n:"Acetic Acid", cat:"supplements", sizes:[{d:"10 ml",p:15}], b:"A 0.6% sterile solvent used for reconstituting IGF-1-family compounds." },
+    { n:"Acetic Acid", cat:"supplements", sizes:[{d:"10 ml",p:15}], b:"A 0.6% sterile solvent used for reconstituting IGF-1-family compounds.", stock:false },
     { n:"Bacteriostatic Water", cat:"supplements", sizes:[{d:"10 ml",p:15}], b:"The standard 0.9% benzyl-alcohol solvent for reconstituting lyophilized compounds." },
-    { n:"Glutathione", cat:"supplements", sizes:[{d:"1500 mg",p:55}], b:"An antioxidant compound studied for redox and detoxification pathways." },
-    { n:"Melatonin", cat:"supplements", sizes:[{d:"10 mg",p:42}], b:"The circadian-signaling compound, prepared here as an injectable research vial." },
-    { n:"NAD Buffer", cat:"supplements", sizes:[{d:"1000 mg",p:89}], b:"A pH-buffered NAD+ formulation studied to reduce injection-site irritation." },
-    { n:"NAD+", cat:"supplements", pop:true, sizes:[{d:"500 mg",p:40},{d:"1000 mg",p:70}], b:"A coenzyme central to cellular-energy research, known to decline with age." },
-    { n:"Vitamin B12", cat:"supplements", sizes:[{d:"10 mg",p:42}], b:"A methylation cofactor studied alongside nerve and red-blood-cell pathways." },
+    { n:"Glutathione", cat:"supplements", sizes:[{d:"1500 mg",p:55}], b:"An antioxidant compound studied for redox and detoxification pathways.", stock:false },
+    { n:"Melatonin", cat:"supplements", sizes:[{d:"10 mg",p:42}], b:"The circadian-signaling compound, prepared here as an injectable research vial.", stock:false },
+    { n:"NAD Buffer", cat:"supplements", sizes:[{d:"1000 mg",p:89}], b:"A pH-buffered NAD+ formulation studied to reduce injection-site irritation.", stock:false },
+    { n:"NAD+", cat:"supplements", pop:true, sizes:[{d:"500 mg",p:40},{d:"1000 mg",p:70}], b:"A coenzyme central to cellular-energy research, known to decline with age.", stock:false },
+    { n:"Vitamin B12", cat:"supplements", sizes:[{d:"10 mg",p:42}], b:"A methylation cofactor studied alongside nerve and red-blood-cell pathways.", stock:false },
   ];
 
   const stacks = [
@@ -1476,26 +1503,28 @@
   }
 
   function productCard(item){
+    const soldOut = item.stock === false;
     const visual = item.img
       ? `<img src="${item.img}" alt="${item.n} — Goldtide Research vial" loading="lazy">`
       : vialArt(item);
     const first = item.sizes[0];
     const sizeControl = item.sizes.length > 1
-      ? `<select class="p-size" data-pname="${item.n}">${item.sizes.map((s,i) => `<option value="${i}">${s.d}</option>`).join('')}</select>`
+      ? `<select class="p-size" data-pname="${item.n}" ${soldOut ? 'disabled' : ''}>${item.sizes.map((s,i) => `<option value="${i}">${s.d}</option>`).join('')}</select>`
       : `<span class="p-tag">${first.d} · RUO</span>`;
     const blurb = (typeof getProductBlurb === 'function') ? getProductBlurb(item.n, item.b) : item.b;
     const popularLabel = (typeof t === 'function') ? t('badge.popular') : 'Popular';
     const perVialLabel = (typeof t === 'function') ? t('badge.perVial') : 'per vial';
     const addLabel = (typeof t === 'function') ? t('badge.add') : 'Add';
+    const soldOutLabel = (typeof t === 'function') ? t('badge.soldOut') : 'Sold Out';
     return `
-      <div class="product-card">
-        <div class="p-visual">${item.pop ? `<span class="p-badge">${popularLabel}</span>` : ''}${visual}</div>
+      <div class="product-card${soldOut ? ' is-sold-out' : ''}">
+        <div class="p-visual">${item.pop && !soldOut ? `<span class="p-badge">${popularLabel}</span>` : ''}${visual}${soldOut ? `<span class="p-soldout-stamp">${soldOutLabel}</span>` : ''}</div>
         ${sizeControl}
         <h4>${item.n}</h4>
         <p class="p-blurb">${blurb}</p>
         <div class="p-bottom">
           <div class="p-price"><span class="p-price-val">CA$${first.p}</span><br><small>${perVialLabel}</small></div>
-          <button class="p-add" data-pname="${item.n}">${addLabel}</button>
+          <button class="p-add" data-pname="${item.n}" ${soldOut ? 'disabled' : ''}>${soldOut ? soldOutLabel : addLabel}</button>
         </div>
       </div>`;
   }
@@ -1560,15 +1589,20 @@
       const blurb = getStackText(s.name, 'b', s.b);
       const vialsLabel = t('badge.vials');
       const addLabel = t('badge.addStack');
+      const soldOutLabel = t('badge.soldOut');
+      const soldOut = s.items.some(itemName => {
+        const p = products.find(pr => pr.n === itemName);
+        return !p || p.stock === false;
+      });
       stackGrid.insertAdjacentHTML('beforeend', `
-        <div class="stack-card">
+        <div class="stack-card${soldOut ? ' is-sold-out' : ''}">
           <span class="label">${eyebrow}</span>
           <h4>${name}</h4>
           <p>${blurb}</p>
           <div class="stack-items">${s.items.map(i => `<span class="stack-pill">${i}</span>`).join('')}</div>
           <div class="stack-bottom">
             <div class="stack-price">CA$${s.price}<small>${s.items.length} ${vialsLabel}</small></div>
-            <button class="add-stack" data-stack="${s.name}">${addLabel}</button>
+            <button class="add-stack" data-stack="${s.name}" ${soldOut ? 'disabled' : ''}>${soldOut ? soldOutLabel : addLabel}</button>
           </div>
         </div>
       `);
