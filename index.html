@@ -1340,27 +1340,27 @@
   // everything else, with remaining unmatched items kept at a reasonable estimate.
   const products = [
     { n:"5-Amino-1MQ", cat:"weight", sizes:[{d:"50 mg",p:90},{d:"100 mg",p:160}], b:"An NNMT-pathway compound studied in fat-cell metabolism models.", stock:false },
-    { n:"AOD-9604", cat:"weight", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A modified growth-hormone fragment studied apart from the broader GH cascade.", stock:false },
+    { n:"AOD-9604", cat:"weight", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A modified growth-hormone fragment studied apart from the broader GH cascade." },
     { n:"Cagrilintide", cat:"weight", sizes:[{d:"10 mg",p:100}], b:"An amylin-analog compound studied alongside GLP-1 pathways for satiety research.", stock:false },
-    { n:"MOTS-c", cat:"weight", pop:true, sizes:[{d:"20 mg",p:65},{d:"40 mg",p:115}], b:"A mitochondrial-derived peptide studied for AMPK activation.", stock:false },
+    { n:"MOTS-c", cat:"weight", pop:true, sizes:[{d:"10 mg",p:40},{d:"20 mg",p:65},{d:"40 mg",p:115}], b:"A mitochondrial-derived peptide studied for AMPK activation." },
     { n:"Retatrutide", cat:"weight", pop:true, sizes:[{d:"10 mg",p:80},{d:"20 mg",p:140},{d:"60 mg",p:320}], b:"A triple-agonist compound studied extensively in weight research." },
     { n:"SS-31", cat:"weight", sizes:[{d:"50 mg",p:140},{d:"100 mg",p:245}], b:"A mitochondria-targeted compound studied in oxidative-stress models.", stock:false },
 
     { n:"GLOW", cat:"blends", sizes:[{d:"70 mg",p:120}], b:"A three-compound blend studied across skin, hair and tissue-repair models.", stock:false },
     { n:"HHB", cat:"blends", sizes:[{d:"10 ml",p:45}], b:"A nine-part B-vitamin and choline blend built for cofactor research.", stock:false },
-    { n:"KLOW", cat:"blends", pop:true, sizes:[{d:"80 mg",p:140}], b:"A four-compound blend studied in gut, joint and skin inflammation models.", stock:false },
+    { n:"KLOW", cat:"blends", pop:true, sizes:[{d:"80 mg",p:140}], b:"A four-compound blend studied in gut, joint and skin inflammation models." },
     { n:"Semax + Selank Blend", cat:"blends", sizes:[{d:"20 mg",p:120}], b:"A combined blend pairing two Russian-studied neuropeptides.", stock:false },
     { n:"SHB", cat:"blends", sizes:[{d:"10 ml",p:55}], b:"A nine-part amino-acid and NAC blend for combined-pathway research.", stock:false },
-    { n:"Wolverine (BPC-157 + TB-500)", cat:"blends", sizes:[{d:"20 mg",p:120}], b:"A pre-combined vial of two of the most studied repair peptides.", stock:false },
+    { n:"Wolverine (BPC-157 + TB-500)", cat:"blends", sizes:[{d:"20 mg",p:120}], b:"A pre-combined vial of two of the most studied repair peptides." },
 
     { n:"BPC-157", cat:"repair", pop:true, sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"One of the most studied repair peptides, examined for angiogenesis and tendon signaling.", stock:false },
     { n:"GHK-Cu", cat:"repair", sizes:[{d:"50 mg",p:50},{d:"100 mg",p:80}], b:"A copper tripeptide studied for its role in activating repair-related gene expression." },
     { n:"KPV", cat:"repair", sizes:[{d:"10 mg",p:50},{d:"20 mg",p:90}], b:"A tripeptide fragment studied for anti-inflammatory signaling.", stock:false },
     { n:"TB-500", cat:"repair", pop:true, sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"A synthetic fragment studied for whole-body repair and vascular signaling.", stock:false },
 
-    { n:"CJC-1295 (No DAC) + Ipamorelin", cat:"gh", pop:true, sizes:[{d:"20 mg (10+10)",p:80}], b:"A combined GHRH/GHRP protocol studied for pulsatile GH release.", stock:false },
+    { n:"CJC-1295 (No DAC) + Ipamorelin", cat:"gh", pop:true, sizes:[{d:"10 mg (5+5)",p:45},{d:"20 mg (10+10)",p:80}], b:"A combined GHRH/GHRP protocol studied for pulsatile GH release." },
     { n:"CJC-1295 (No DAC)", cat:"gh", sizes:[{d:"10 mg",p:65},{d:"20 mg",p:115}], b:"A GHRH analog studied without the DAC modification, examined for its shorter-acting pulsatile release profile." },
-    { n:"Ipamorelin", cat:"gh", sizes:[{d:"10 mg",p:60},{d:"20 mg",p:105}], b:"A selective GHRP studied for GH release without cortisol or prolactin elevation.", stock:false },
+    { n:"Ipamorelin", cat:"gh", sizes:[{d:"10 mg",p:60},{d:"20 mg",p:105}], b:"A selective GHRP studied for GH release without cortisol or prolactin elevation." },
     { n:"Sermorelin", cat:"gh", sizes:[{d:"10 mg",p:69},{d:"20 mg",p:120}], b:"The original GHRH-analog compound, studied since its early clinical use.", stock:false },
     { n:"Tesamorelin", cat:"gh", pop:true, sizes:[{d:"10 mg",p:100},{d:"20 mg",p:120}], b:"A GHRH analog studied specifically in visceral-fat research." },
 
@@ -1381,12 +1381,12 @@
     { n:"AHK-Cu", cat:"cosmetic", sizes:[{d:"100 mg",p:52},{d:"200 mg",p:90}], b:"A copper peptide studied in hair-follicle research.", stock:false },
     { n:"SNAP-8", cat:"cosmetic", sizes:[{d:"10 mg",p:34},{d:"20 mg",p:60}], b:"A topical octapeptide studied for its effect on expression-line formation.", stock:false },
 
-    { n:"Acetic Acid", cat:"supplements", sizes:[{d:"10 ml",p:15}], b:"A 0.6% sterile solvent used for reconstituting IGF-1-family compounds.", stock:false },
+    { n:"Acetic Acid", cat:"supplements", sizes:[{d:"10 ml",p:15}], b:"A 0.6% sterile solvent used for reconstituting IGF-1-family compounds." },
     { n:"Bacteriostatic Water", cat:"supplements", sizes:[{d:"10 ml",p:15}], b:"The standard 0.9% benzyl-alcohol solvent for reconstituting lyophilized compounds." },
-    { n:"Glutathione", cat:"supplements", sizes:[{d:"1500 mg",p:55}], b:"An antioxidant compound studied for redox and detoxification pathways.", stock:false },
+    { n:"Glutathione", cat:"supplements", sizes:[{d:"1500 mg",p:55}], b:"An antioxidant compound studied for redox and detoxification pathways." },
     { n:"Melatonin", cat:"supplements", sizes:[{d:"10 mg",p:42}], b:"The circadian-signaling compound, prepared here as an injectable research vial.", stock:false },
     { n:"NAD Buffer", cat:"supplements", sizes:[{d:"1000 mg",p:89}], b:"A pH-buffered NAD+ formulation studied to reduce injection-site irritation.", stock:false },
-    { n:"NAD+", cat:"supplements", pop:true, sizes:[{d:"500 mg",p:40},{d:"1000 mg",p:70}], b:"A coenzyme central to cellular-energy research, known to decline with age.", stock:false },
+    { n:"NAD+", cat:"supplements", pop:true, sizes:[{d:"500 mg",p:40},{d:"1000 mg",p:70}], b:"A coenzyme central to cellular-energy research, known to decline with age." },
     { n:"Vitamin B12", cat:"supplements", sizes:[{d:"10 mg",p:42}], b:"A methylation cofactor studied alongside nerve and red-blood-cell pathways.", stock:false },
   ];
 
