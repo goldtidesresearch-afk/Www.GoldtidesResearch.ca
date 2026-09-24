@@ -1127,4 +1127,14 @@
   // This script is loaded at the end of <body>, so the DOM is already parsed
   // by the time it runs — DOMContentLoaded would have already fired. Run directly.
   init();
+
+  // Register the service worker so the site can be installed as an app
+  // (Add to Home Screen) and works offline. Registered from here since
+  // this file already loads on every page.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {
+      // Installation still works without this; fail silently rather than
+      // breaking the page if the browser blocks it (e.g. private browsing).
+    });
+  }
 })();
