@@ -15,10 +15,10 @@ const APP_SHELL = [
   '/terms.html',
   '/privacy.html',
   '/shipping.html',
-  '/assets/i18n.js',
-  '/assets/goldtide-logo.png',
-  '/assets/icons/icon-192.png',
-  '/assets/icons/icon-512.png',
+  '//i18n.js',
+  '//goldtide-logo.png',
+  '//icon-192.png',
+  '//icon-512.png',
   '/manifest.json',
 ];
 
